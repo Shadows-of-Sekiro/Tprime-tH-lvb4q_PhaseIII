@@ -1,0 +1,17 @@
+drop *
+keep Electron*
+keep Muon*
+keep Jet*
+keep FatJet*
+keep SubJet*
+keep *MET*
+keep luminosityBlock*
+keep run*
+keep event
+keep PV*
+keep nIsoTrack
+keep IsoTrack*
+keep HLT_*
+drop HLT_*MET*
+drop L1*
+drop Tau*

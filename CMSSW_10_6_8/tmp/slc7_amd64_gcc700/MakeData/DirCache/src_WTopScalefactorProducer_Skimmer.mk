@@ -1,0 +1,2 @@
+ALL_PACKAGES += WTopScalefactorProducer/Skimmer
+subdirs_src_WTopScalefactorProducer_Skimmer := src_WTopScalefactorProducer_Skimmer_python

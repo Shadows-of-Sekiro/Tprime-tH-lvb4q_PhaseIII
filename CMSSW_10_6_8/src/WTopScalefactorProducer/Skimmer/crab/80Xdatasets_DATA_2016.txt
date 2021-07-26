@@ -1,0 +1,7 @@
+/SingleMuon/srappocc-SingleMuon_Run2016B-07Aug17_ver2-v1-b84139e74cafd5a0bfdaf4226ec7e7b4/USER
+/SingleMuon/srappocc-SingleMuon_Run2016C-07Aug17-v1-b84139e74cafd5a0bfdaf4226ec7e7b4/USER
+/SingleMuon/srappocc-SingleMuon_Run2016D-07Aug17-v1-b84139e74cafd5a0bfdaf4226ec7e7b4/USER
+/SingleMuon/srappocc-SingleMuon_Run2016E-07Aug17-v1-b84139e74cafd5a0bfdaf4226ec7e7b4/USER
+/SingleMuon/srappocc-SingleMuon_Run2016F-07Aug17-v1-b84139e74cafd5a0bfdaf4226ec7e7b4/USER
+/SingleMuon/srappocc-SingleMuon_Run2016G-07Aug17-v1-b84139e74cafd5a0bfdaf4226ec7e7b4/USER
+/SingleMuon/srappocc-SingleMuon_Run2016H-07Aug17-v1-b84139e74cafd5a0bfdaf4226ec7e7b4/USER

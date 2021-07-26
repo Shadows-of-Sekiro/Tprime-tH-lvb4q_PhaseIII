@@ -1,0 +1,5 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/TT_to_2L2Nu/210310_180051/0000/tree_44.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/TT_to_2L2Nu/210310_180051/0000/tree_22.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/TT_to_2L2Nu/210310_180051/0000/tree_30.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/TT_to_2L2Nu/210310_180051/0000/tree_38.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/TT_to_2L2Nu/210310_180051/0000/tree_57.root

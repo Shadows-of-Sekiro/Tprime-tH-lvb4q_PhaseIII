@@ -1,0 +1,2 @@
+ALL_SUBSYSTEMS+=WTopScalefactorProducer
+subdirs_src_WTopScalefactorProducer = src_WTopScalefactorProducer_Fitter src_WTopScalefactorProducer_Skimmer

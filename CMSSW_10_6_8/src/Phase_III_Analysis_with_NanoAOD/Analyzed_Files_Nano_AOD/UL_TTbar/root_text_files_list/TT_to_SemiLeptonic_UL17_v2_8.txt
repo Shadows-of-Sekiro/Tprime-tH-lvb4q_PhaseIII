@@ -1,0 +1,5 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/TT_to_SemiLeptonic/210310_180146/0000/tree_16.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/TT_to_SemiLeptonic/210310_180146/0000/tree_47.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/TT_to_SemiLeptonic/210310_180146/0000/tree_56.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/TT_to_SemiLeptonic/210310_180146/0000/tree_44.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/TT_to_SemiLeptonic/210310_180146/0000/tree_101.root

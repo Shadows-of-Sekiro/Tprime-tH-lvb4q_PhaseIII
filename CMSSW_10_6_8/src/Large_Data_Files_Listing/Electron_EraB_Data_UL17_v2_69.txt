@@ -1,0 +1,10 @@
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_711.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_712.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_713.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_714.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_715.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_716.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_717.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_718.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_719.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleElectron/EraB_Ele/210326_133732/0000/tree_72.root

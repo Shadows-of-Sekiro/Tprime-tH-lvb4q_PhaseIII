@@ -1,0 +1,17 @@
+
++JobFlavour = "tomorrow"   
+universe = vanilla
+Executable = Test_Nano_AOD.sh
+
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = Test_Nano_AOD.sh,doSkim.py
+
+Output = output_log/condor_$(Cluster)_$(Process).stdout
+Error = output_log/condor_$(Cluster)_$(Process).stderr
+Log = output_log/condor_$(Cluster)_$(Process).log
+
+x509userproxy = $ENV(X509_USER_PROXY)
+Arguments = doSkim.py
+Queue 1

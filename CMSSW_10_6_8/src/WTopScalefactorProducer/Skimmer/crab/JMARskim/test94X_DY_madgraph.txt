@@ -1,0 +1,1 @@
+/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/srappocc-DYJetsToLLM-50TuneCP513TeV-madgraphMLM-pythia8RunIIFall17MiniAOD-RECOSIMstep94Xmc2017-d796f2a7f7abc8de12da326415f22981/USER

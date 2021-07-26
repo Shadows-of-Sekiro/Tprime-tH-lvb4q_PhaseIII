@@ -1,0 +1,68 @@
+Starting job on  Fri Dec 4 07:04:51 CET 2020
+Running on: Linux b7s06n9857.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+System software: CentOS Linux release 7.9.2009 (Core) 
+PWD: /pool/condor/dir_19463
+Resetting caches
+Done: ProjectRename
+README.md
+Skimmer.py
+Skimmer.pyc
+TEST
+Test_Nano_AOD.sh
+Test_Nano_AOD_1.sh
+achhetri.cc
+condor_test_Nano_AOD.jdl
+condor_test_Nano_AOD_longlunch.jdl
+crab
+do-control-plots-Onlytt.py
+do-control-plots-Sept10.py
+do-control-plots.py
+doSkim.py
+doSkim_org.py
+job_submit_script.sh
+keep_and_drop.txt
+myfile.txt
+nohup.out
+output_log
+plots
+plotsWCR
+python
+qsub
+read_proxy_lxplus
+test.py
+============================================
+Processing MC...
+Will write selected trees to TEST
+Pre-select 236800 entries out of 236800 (100.00%)
+Processed    10000/  236800 entries,  4.22% (elapsed time   233.1s, curr speed    0.043 kHz, avg speed    0.043 kHz), accepted     5685/   10001 events (56.84%)
+Processed    20000/  236800 entries,  8.45% (elapsed time   425.3s, curr speed    0.052 kHz, avg speed    0.047 kHz), accepted    11351/   20001 events (56.75%)
+Processed    30000/  236800 entries, 12.67% (elapsed time   620.5s, curr speed    0.051 kHz, avg speed    0.048 kHz), accepted    17137/   30001 events (57.12%)
+Processed    40000/  236800 entries, 16.89% (elapsed time   817.4s, curr speed    0.051 kHz, avg speed    0.049 kHz), accepted    22899/   40001 events (57.25%)
+Processed    50000/  236800 entries, 21.11% (elapsed time   959.8s, curr speed    0.070 kHz, avg speed    0.052 kHz), accepted    28676/   50001 events (57.35%)
+Processed    60000/  236800 entries, 25.34% (elapsed time  1167.6s, curr speed    0.048 kHz, avg speed    0.051 kHz), accepted    34351/   60001 events (57.25%)
+Processed    70000/  236800 entries, 29.56% (elapsed time  1362.9s, curr speed    0.051 kHz, avg speed    0.051 kHz), accepted    40137/   70001 events (57.34%)
+Processed    80000/  236800 entries, 33.78% (elapsed time  1560.1s, curr speed    0.051 kHz, avg speed    0.051 kHz), accepted    45844/   80001 events (57.30%)
+Processed    90000/  236800 entries, 38.01% (elapsed time  1703.4s, curr speed    0.070 kHz, avg speed    0.053 kHz), accepted    51498/   90001 events (57.22%)
+Processed   100000/  236800 entries, 42.23% (elapsed time  1894.4s, curr speed    0.052 kHz, avg speed    0.053 kHz), accepted    57185/  100001 events (57.18%)
+Processed   110000/  236800 entries, 46.45% (elapsed time  2086.2s, curr speed    0.052 kHz, avg speed    0.053 kHz), accepted    62963/  110001 events (57.24%)
+Processed   120000/  236800 entries, 50.68% (elapsed time  2284.2s, curr speed    0.050 kHz, avg speed    0.053 kHz), accepted    68713/  120001 events (57.26%)
+Processed   130000/  236800 entries, 54.90% (elapsed time  2425.4s, curr speed    0.071 kHz, avg speed    0.054 kHz), accepted    74294/  130001 events (57.15%)
+Processed   140000/  236800 entries, 59.12% (elapsed time  2619.5s, curr speed    0.052 kHz, avg speed    0.053 kHz), accepted    79974/  140001 events (57.12%)
+Processed   150000/  236800 entries, 63.34% (elapsed time  2811.6s, curr speed    0.052 kHz, avg speed    0.053 kHz), accepted    85590/  150001 events (57.06%)
+Processed   160000/  236800 entries, 67.57% (elapsed time  3013.6s, curr speed    0.050 kHz, avg speed    0.053 kHz), accepted    91380/  160001 events (57.11%)
+Processed   170000/  236800 entries, 71.79% (elapsed time  3161.2s, curr speed    0.068 kHz, avg speed    0.054 kHz), accepted    97068/  170001 events (57.10%)
+Processed   180000/  236800 entries, 76.01% (elapsed time  3360.1s, curr speed    0.050 kHz, avg speed    0.054 kHz), accepted   102745/  180001 events (57.08%)
+Processed   190000/  236800 entries, 80.24% (elapsed time  3567.5s, curr speed    0.048 kHz, avg speed    0.053 kHz), accepted   108433/  190001 events (57.07%)
+Processed   200000/  236800 entries, 84.46% (elapsed time  3778.0s, curr speed    0.048 kHz, avg speed    0.053 kHz), accepted   114155/  200001 events (57.08%)
+Processed   210000/  236800 entries, 88.68% (elapsed time  3932.8s, curr speed    0.065 kHz, avg speed    0.053 kHz), accepted   119850/  210001 events (57.07%)
+Processed   220000/  236800 entries, 92.91% (elapsed time  4131.1s, curr speed    0.050 kHz, avg speed    0.053 kHz), accepted   125510/  220001 events (57.05%)
+Processed   230000/  236800 entries, 97.13% (elapsed time  4331.8s, curr speed    0.050 kHz, avg speed    0.053 kHz), accepted   131241/  230001 events (57.06%)
+File closed successfully
+Processed 236800 preselected entries from root://cms-xrd-global.cern.ch//store/mc/RunIISummer19UL16NanoAOD/TprimeBToTH_M-1500_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v13-v1/240000/8F19747F-C654-DD40-967B-393CD2EEFEE6.root (236800 entries). Finally selected 135120 entries
+Done TprimeBToTH_M-1500_LH_RunIISummer19UL16.root
+Module ended successfully, 0 events analyzed
+Total time 5446.5 sec. to process 236800 events. Rate = 43.5 Hz.
+DONE
+PWD: /pool/condor/dir_19463/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer
+====> List output files : 
+Fri Dec  4 08:35:58 CET 2020

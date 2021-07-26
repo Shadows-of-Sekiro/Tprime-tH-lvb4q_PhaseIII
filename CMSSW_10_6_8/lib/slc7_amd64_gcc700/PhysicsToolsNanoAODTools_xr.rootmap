@@ -1,0 +1,12 @@
+[ libPhysicsToolsNanoAODTools.so ]
+# List of selected classes
+class PyJetParametersWrapper
+class PyJetResolutionScaleFactorWrapper
+class PyJetResolutionWrapper
+class ReduceMantissaToNbitsRounding
+class WeightCalculatorFromHistogram
+header PhysicsTools/NanoAODTools/interface/PyJetParametersWrapper.h
+header PhysicsTools/NanoAODTools/interface/PyJetResolutionScaleFactorWrapper.h
+header PhysicsTools/NanoAODTools/interface/PyJetResolutionWrapper.h
+header PhysicsTools/NanoAODTools/interface/ReduceMantissa.h
+header PhysicsTools/NanoAODTools/interface/WeightCalculatorFromHistogram.h

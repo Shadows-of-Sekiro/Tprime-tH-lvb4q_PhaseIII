@@ -1,0 +1,6 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-100To200_v2/210428_221645/0000/tree_20.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-100To200_v2/210428_221645/0000/tree_21.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-100To200_v2/210428_221645/0000/tree_22.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-100To200_v2/210428_221645/0000/tree_23.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-100To200_v2/210428_221645/0000/tree_24.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-100To200_v2/210428_221645/0000/tree_25.root

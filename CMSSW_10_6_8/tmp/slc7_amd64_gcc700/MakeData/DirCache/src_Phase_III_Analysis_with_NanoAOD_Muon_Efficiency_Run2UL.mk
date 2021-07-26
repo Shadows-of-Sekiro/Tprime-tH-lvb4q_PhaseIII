@@ -1,0 +1,2 @@
+ALL_PACKAGES += Phase_III_Analysis_with_NanoAOD/Muon_Efficiency_Run2UL
+subdirs_src_Phase_III_Analysis_with_NanoAOD_Muon_Efficiency_Run2UL := src_Phase_III_Analysis_with_NanoAOD_Muon_Efficiency_Run2UL_MuonReferenceEfficiencies-master-EfficienciesStudies-UL2017

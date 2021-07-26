@@ -1,0 +1,19 @@
++JobFlavour = "microcentury"
+universe = vanilla
+Executable = Condor_Job_UL_NANO_BkG.sh
+
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = Condor_Job_UL_NANO_BkG.sh,PUPPI.exe, $(filename)
+Output = output_log/condor_$(Cluster)_$(Process).stdout
+Error = output_log/condor_$(Cluster)_$(Process).stderr
+Log = output_log/condor_$(Cluster)_$(Process).log
+
+x509userproxy = $ENV(X509_USER_PROXY)
+Arguments = $(filename)
+
+
+
+Queue filename matching files ../Analyzed_Files_Nano_AOD/UL_TTbar/root_text_files_list/TT*UL17_*.txt
+Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/QCD_*UL17_*.txt

@@ -1,0 +1,427 @@
+DEBUG 2020-11-24 14:16:29.676 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-24 14:16:29.676 UTC: 	 Running on: Linux lxplus788.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-24 14:16:29.676 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-24 14:16:29.677 UTC: 	 Could not find CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3; creating a new one.
+INFO 2020-11-24 14:16:29.716 UTC: 	 Will use CRAB configuration file crab_TprimeBToTH_RunIISummer19UL16.py
+DEBUG 2020-11-24 14:16:29.716 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-11-24 14:16:29.718 UTC: 	 Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/crab_NANO/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-11-24 14:16:29.718 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 312, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/crab_NANO/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2020-11-24 14:16:29.721 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/crab_NANO/crab.log
+DEBUG 2020-11-24 16:58:49.636 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-24 16:58:49.637 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-24 16:58:49.637 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-24 16:58:49.640 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+INFO 2020-11-24 16:58:49.644 UTC: 	 Will use CRAB configuration file crab_TprimeBToTH_RunIISummer19UL16.py
+DEBUG 2020-11-24 16:58:49.644 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-11-24 16:58:49.645 UTC: 	 Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-11-24 16:58:49.645 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 312, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2020-11-24 16:58:49.647 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab.log
+DEBUG 2020-11-24 17:53:22.096 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-24 17:53:22.096 UTC: 	 Running on: Linux lxplus741.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-24 17:53:22.096 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-24 17:53:22.217 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+INFO 2020-11-24 17:53:22.260 UTC: 	 Will use CRAB configuration file crab_TprimeBToTH_RunIISummer19UL16.py
+DEBUG 2020-11-24 17:53:22.260 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-11-24 17:53:22.261 UTC: 	 Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-11-24 17:53:22.261 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 312, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2020-11-24 17:53:22.264 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab.log
+DEBUG 2020-11-25 07:06:03.976 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-25 07:06:03.976 UTC: 	 Running on: Linux lxplus7109.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-25 07:06:03.976 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-25 07:06:03.977 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+INFO 2020-11-25 07:06:04.000 UTC: 	 Will use CRAB configuration file crab_TprimeBToTH_RunIISummer19UL16.py
+DEBUG 2020-11-25 07:06:04.000 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-11-25 07:06:04.005 UTC: 	 Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-11-25 07:06:04.005 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 312, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2020-11-25 07:06:04.032 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab.log
+DEBUG 2020-11-25 07:07:03.198 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-25 07:07:03.198 UTC: 	 Running on: Linux lxplus7109.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-25 07:07:03.198 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-25 07:07:03.198 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+INFO 2020-11-25 07:07:03.199 UTC: 	 Will use CRAB configuration file crab_TprimeBToTH_RunIISummer19UL16.py
+DEBUG 2020-11-25 07:07:03.200 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-11-25 07:07:03.200 UTC: 	 Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-11-25 07:07:03.200 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 312, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_TprimeBToTH_RunIISummer19UL16.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2020-11-25 07:07:03.203 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab.log
+DEBUG 2020-11-25 11:00:58.898 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-25 11:00:58.898 UTC: 	 Running on: Linux lxplus7102.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-25 11:00:58.898 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-25 11:00:58.899 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+INFO 2020-11-25 11:00:58.916 UTC: 	 Will use CRAB configuration file crab_RK_NANO.py
+DEBUG 2020-11-25 11:00:58.916 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-11-25 11:00:58.919 UTC: 	 Error while loading CRAB configuration:
+cannot import name getUsernameFromSiteDB
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-11-25 11:00:58.919 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 312, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+cannot import name getUsernameFromSiteDB
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2020-11-25 11:00:59.215 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab.log
+DEBUG 2020-11-25 11:18:39.827 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-25 11:18:39.828 UTC: 	 Running on: Linux lxplus7102.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-25 11:18:39.828 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-25 11:18:39.829 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+INFO 2020-11-25 11:18:39.830 UTC: 	 Will use CRAB configuration file crab_RK_NANO.py
+DEBUG 2020-11-25 11:18:39.831 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-11-25 11:18:39.835 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2020-11-25 11:18:39.836 UTC: 	 Working area '/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_Tprime_v5_NANo_AOD_106X/crab_NanoPost1' already exists 
+Please change the requestName in the config file
+ERROR 2020-11-25 11:18:39.836 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/ClientUtilities.py", line 397, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_Tprime_v5_NANo_AOD_106X/crab_NanoPost1' already exists 
+Please change the requestName in the config file
+INFO 2020-11-25 11:18:39.841 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab.log
+DEBUG 2020-11-25 12:44:43.869 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-25 12:44:43.870 UTC: 	 Running on: Linux lxplus7102.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-25 12:44:43.870 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-25 12:44:43.871 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+INFO 2020-11-25 12:44:43.874 UTC: 	 Will use CRAB configuration file crab_RK_NANO.py
+DEBUG 2020-11-25 12:44:43.874 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-11-25 12:44:43.884 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2020-11-25 12:44:43.890 UTC: 	 Working area '/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_Tprime_v5_NANo_AOD_106X/crab_NanoPost1' already exists 
+Please change the requestName in the config file
+ERROR 2020-11-25 12:44:43.890 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/ClientUtilities.py", line 397, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab_Tprime_v5_NANo_AOD_106X/crab_NanoPost1' already exists 
+Please change the requestName in the config file
+INFO 2020-11-25 12:44:43.898 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab.log
+DEBUG 2020-11-26 18:10:22.246 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-26 18:10:22.247 UTC: 	 Running on: Linux lxplus764.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-26 18:10:22.247 UTC: 	 Executing command: 'status'
+DEBUG 2020-11-26 18:10:22.248 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+ERROR 2020-11-26 18:10:22.249 UTC: 	 Error: crab_Tprime_v5_NANo_AOD_106X/crab_NanoPost14 is not a valid CRAB project directory.
+ERROR 2020-11-26 18:10:22.250 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/status.py", line 41, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 271, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 628, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_Tprime_v5_NANo_AOD_106X/crab_NanoPost14 is not a valid CRAB project directory.
+INFO 2020-11-26 18:10:22.342 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANO_crab/crab.log
+DEBUG 2020-12-05 16:30:52.900 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-12-05 16:30:52.901 UTC: 	 Running on: Linux lxplus731.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-12-05 16:30:52.901 UTC: 	 Executing command: 'submit'
+DEBUG 2020-12-05 16:30:52.918 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2020-12-05 16:30:52.942 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2020-12-09 14:04:07.914 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-12-09 14:04:07.915 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-12-09 14:04:07.915 UTC: 	 Executing command: 'submit'
+DEBUG 2020-12-09 14:04:07.915 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2020-12-09 14:05:05.736 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-12-09 14:05:05.737 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-12-09 14:05:05.737 UTC: 	 Executing command: 'submit'
+DEBUG 2020-12-09 14:05:05.738 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+INFO 2020-12-09 14:05:05.739 UTC: 	 Will use CRAB configuration file crab_VHBB_NANO.py
+DEBUG 2020-12-09 14:05:05.740 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-12-09 14:05:05.746 UTC: 	 Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab_VHBB_NANO.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-12-09 14:05:05.746 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 312, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Unable to find a Configuration object instance in file:
+/afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab_VHBB_NANO.py
+
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2020-12-09 14:05:05.752 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab.log
+DEBUG 2020-12-09 14:23:24.780 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-12-09 14:23:24.781 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-12-09 14:23:24.781 UTC: 	 Executing command: 'submit'
+DEBUG 2020-12-09 14:23:24.803 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2020-12-09 15:22:31.446 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-12-09 15:22:31.447 UTC: 	 Running on: Linux lxplus719.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-12-09 15:22:31.447 UTC: 	 Executing command: 'submit'
+DEBUG 2020-12-09 15:22:31.461 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2020-12-21 13:59:05.444 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-12-21 13:59:05.444 UTC: 	 Running on: Linux lxplus727.cern.ch 3.10.0-1160.2.2.el7.x86_64 #1 SMP Tue Oct 20 16:53:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-12-21 13:59:05.444 UTC: 	 Executing command: 'status'
+DEBUG 2020-12-21 13:59:05.444 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+ERROR 2020-12-21 13:59:05.446 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab_Tprime_v5_NANo_AOD_106X
+ERROR 2020-12-21 13:59:05.446 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/status.py", line 41, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 271, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 632, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 494, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab_Tprime_v5_NANo_AOD_106X
+INFO 2020-12-21 13:59:05.481 UTC: 	 Log file is /afs/cern.ch/user/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab.log
+DEBUG 2021-01-19 10:26:51.228 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-01-19 10:26:51.228 UTC: 	 Running on: Linux lxplus720.cern.ch 3.10.0-1160.6.1.el7.x86_64 #1 SMP Tue Nov 17 13:59:11 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-01-19 10:26:51.228 UTC: 	 Executing command: 'submit'
+DEBUG 2021-01-19 10:26:51.247 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2021-01-19 10:26:51.322 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-01-19 18:13:28.409 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-01-19 18:13:28.409 UTC: 	 Running on: Linux lxplus720.cern.ch 3.10.0-1160.6.1.el7.x86_64 #1 SMP Tue Nov 17 13:59:11 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-01-19 18:13:28.409 UTC: 	 Executing command: 'submit'
+DEBUG 2021-01-19 18:13:28.424 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2021-01-19 18:13:28.425 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-02-05 18:04:59.108 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-02-05 18:04:59.108 UTC: 	 Running on: Linux lxplus7115.cern.ch 3.10.0-1160.6.1.el7.x86_64 #1 SMP Tue Nov 17 13:59:11 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-02-05 18:04:59.108 UTC: 	 Executing command: 'status'
+DEBUG 2021-02-05 18:04:59.109 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+ERROR 2021-02-05 18:04:59.110 UTC: 	 Error: crab_Data2017_UL_106X/crab_EraDE is not a valid CRAB project directory.
+ERROR 2021-02-05 18:04:59.110 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/status.py", line 41, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 271, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 628, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_Data2017_UL_106X/crab_EraDE is not a valid CRAB project directory.
+INFO 2021-02-05 18:04:59.159 UTC: 	 Log file is /afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab.log
+DEBUG 2021-02-12 08:58:37.465 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-02-12 08:58:37.465 UTC: 	 Running on: Linux lxplus758.cern.ch 3.10.0-1160.11.1.el7.x86_64 #1 SMP Fri Dec 18 16:34:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-02-12 08:58:37.465 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-02-12 08:58:37.465 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2021-02-22 12:41:32.345 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-02-22 12:41:32.345 UTC: 	 Running on: Linux lxplus757.cern.ch 3.10.0-1160.11.1.el7.x86_64 #1 SMP Fri Dec 18 16:34:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-02-22 12:41:32.346 UTC: 	 Executing command: 'submit'
+DEBUG 2021-02-22 12:41:32.357 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2021-02-22 12:41:32.358 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-02-22 13:20:31.140 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-02-22 13:20:31.140 UTC: 	 Running on: Linux lxplus757.cern.ch 3.10.0-1160.11.1.el7.x86_64 #1 SMP Fri Dec 18 16:34:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-02-22 13:20:31.140 UTC: 	 Executing command: 'status'
+DEBUG 2021-02-22 13:20:31.140 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+ERROR 2021-02-22 13:20:31.142 UTC: 	 Error: crab_Data2017_UL_106X/crab_Eraf is not a valid CRAB project directory.
+ERROR 2021-02-22 13:20:31.143 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/status.py", line 41, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 271, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 628, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_Data2017_UL_106X/crab_Eraf is not a valid CRAB project directory.
+INFO 2021-02-22 13:20:31.149 UTC: 	 Log file is /afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab.log
+DEBUG 2021-02-22 13:51:30.033 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-02-22 13:51:30.034 UTC: 	 Running on: Linux lxplus757.cern.ch 3.10.0-1160.11.1.el7.x86_64 #1 SMP Fri Dec 18 16:34:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-02-22 13:51:30.034 UTC: 	 Executing command: 'status'
+DEBUG 2021-02-22 13:51:30.034 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+ERROR 2021-02-22 13:51:30.035 UTC: 	 Error: crab_Data2017_UL_106X/crab_EraF is not a valid CRAB project directory.
+ERROR 2021-02-22 13:51:30.035 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/status.py", line 41, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 271, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.01/lib/CRABClient/Commands/SubCommand.py", line 628, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_Data2017_UL_106X/crab_EraF is not a valid CRAB project directory.
+INFO 2021-02-22 13:51:30.072 UTC: 	 Log file is /afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/WTopScalefactorProducer/Skimmer/NANOcrab/crab.log
+DEBUG 2021-03-02 12:54:06.885 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-03-02 12:54:06.885 UTC: 	 Running on: Linux lxplus746.cern.ch 3.10.0-1160.11.1.el7.x86_64 #1 SMP Fri Dec 18 16:34:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-03-02 12:54:06.885 UTC: 	 Executing command: 'submit'
+DEBUG 2021-03-02 12:54:06.898 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2021-03-02 12:54:06.900 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-03-13 09:54:39.960 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-03-13 09:54:39.961 UTC: 	 Running on: Linux lxplus780.cern.ch 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-03-13 09:54:39.961 UTC: 	 Executing command: 'status'
+DEBUG 2021-03-13 09:54:39.961 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2021-03-13 10:24:04.623 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-03-13 10:24:04.624 UTC: 	 Running on: Linux lxplus780.cern.ch 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-03-13 10:24:04.624 UTC: 	 Executing command: 'submit'
+DEBUG 2021-03-13 10:24:04.624 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2021-03-13 10:24:04.627 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-03-13 10:25:08.837 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2021-03-13 10:25:08.837 UTC: 	 Running on: Linux lxplus780.cern.ch 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-03-13 10:25:08.838 UTC: 	 Executing command: 'submit'
+DEBUG 2021-03-13 10:25:08.851 UTC: 	 Found CRAB cache file /afs/cern.ch/user/a/achhetri/.crab3
+DEBUG 2021-03-13 10:25:08.852 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).

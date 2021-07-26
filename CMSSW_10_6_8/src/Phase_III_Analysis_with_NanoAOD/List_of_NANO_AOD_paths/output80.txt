@@ -1,0 +1,4 @@
+total 4.8M
+-rw-r--r--. 1 achhetri zh 2.4M Dec 21 14:49 tree_2.root
+-rw-r--r--. 1 achhetri zh 2.5M Dec 21 14:53 tree_1.root
+drwx------. 2 achhetri zh 4.0K Dec 21 14:53 log

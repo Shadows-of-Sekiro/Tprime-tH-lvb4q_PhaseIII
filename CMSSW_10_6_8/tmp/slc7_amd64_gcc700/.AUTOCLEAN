@@ -1,0 +1,7 @@
+
+/usr/bin/rm -rf tmp/slc7_amd64_gcc700/edmplugins/poison/Phase_III_Analysis_with_NanoAOD/MuonReferenceEfficiencies-master-EfficienciesStudies-UL2016_postVFP-DEN_TrackerMuons-rootfiles
+/usr/bin/touch tmp/common/cache/packs/changed
+/usr/bin/rm -rf tmp/slc7_amd64_gcc700/edmplugins/poison/Phase_III_Analysis_with_NanoAOD/MuonReferenceEfficiencies-master-EfficienciesStudies-UL2018-DEN_TrackerMuons-rootfiles
+/usr/bin/touch tmp/common/cache/packs/changed
+/usr/bin/rm -rf tmp/slc7_amd64_gcc700/edmplugins/poison/Phase_III_Analysis_with_NanoAOD/NANOAOD
+/usr/bin/touch tmp/common/cache/packs/changed

@@ -1,0 +1,6 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/DYJetsToLL_M-50_RunIIUL17NanoAODv2/210310_131031/0000/tree_54.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/DYJetsToLL_M-50_RunIIUL17NanoAODv2/210310_131031/0000/tree_52.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/DYJetsToLL_M-50_RunIIUL17NanoAODv2/210310_131031/0000/tree_55.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/DYJetsToLL_M-50_RunIIUL17NanoAODv2/210310_131031/0000/tree_24.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/DYJetsToLL_M-50_RunIIUL17NanoAODv2/210310_131031/0000/tree_57.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/DYJetsToLL_M-50_RunIIUL17NanoAODv2/210310_131031/0000/tree_16.root

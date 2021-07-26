@@ -1,0 +1,13 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_1.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_10.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_11.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_12.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_13.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_2.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_3.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_4.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_5.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_6.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_7.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_8.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/QCD_Pt-50to80_EMEnriched_TuneCP5_13TeV_pythia8/QCD_Pt50to80_EM_v2/210309_120007/0000/tree_9.root

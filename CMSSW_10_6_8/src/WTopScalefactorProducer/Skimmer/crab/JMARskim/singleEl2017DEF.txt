@@ -1,0 +1,3 @@
+/SingleElectron/srappocc-SingleElectron_Run2017D-17Nov2017-v1-8ecb3c180b769f612a743735a75fd199/USER
+/SingleElectron/srappocc-SingleElectron_Run2017E-17Nov2017-v1-8ecb3c180b769f612a743735a75fd199/USER
+/SingleElectron/srappocc-SingleElectron_Run2017F-17Nov2017-v1-8ecb3c180b769f612a743735a75fd199/USER

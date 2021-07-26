@@ -1,0 +1,5 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/TT_to_Hadronic/210310_180242/0000/tree_24.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/TT_to_Hadronic/210310_180242/0000/tree_9.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/TT_to_Hadronic/210310_180242/0000/tree_23.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/TT_to_Hadronic/210310_180242/0000/tree_30.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/TT_to_Hadronic/210310_180242/0000/tree_60.root

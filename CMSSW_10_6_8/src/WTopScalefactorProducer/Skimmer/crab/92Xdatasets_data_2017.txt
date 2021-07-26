@@ -1,0 +1,5 @@
+/SingleMuon/thaarres-SingleMuon_Run2017B-17Nov2017-v1-351ed72508aa977f1c65d26f45752bf7/USER
+/SingleMuon/thaarres-SingleMuon_Run2017C-17Nov2017-v1-351ed72508aa977f1c65d26f45752bf7/USER
+/SingleMuon/thaarres-SingleMuon_Run2017D-17Nov2017-v1-351ed72508aa977f1c65d26f45752bf7/USER
+/SingleMuon/thaarres-SingleMuon_Run2017E-17Nov2017-v1-351ed72508aa977f1c65d26f45752bf7/USER
+/SingleMuon/thaarres-SingleMuon_Run2017F-17Nov2017-v1-351ed72508aa977f1c65d26f45752bf7/USER

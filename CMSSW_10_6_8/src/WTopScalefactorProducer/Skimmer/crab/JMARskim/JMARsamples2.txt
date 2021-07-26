@@ -1,0 +1,3 @@
+/DYJetsToLL_M-50_Zpt-150toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/srappocc-DYJetsToLLM-50Zpt-150toInfTuneCUETP8M113TeV-madgraphMLM-pythia8-a6ef50520338a6183974a5fbdf726458/USER
+/SingleMuon/srappocc-SingleMuon_Run2016G-07Aug17-v1-ea2e236c14ed34f8a386c9af0083e4f5/USER
+/SingleMuon/srappocc-SingleMuon_Run2017C-17Nov2017-v1-8ecb3c180b769f612a743735a75fd199/USER

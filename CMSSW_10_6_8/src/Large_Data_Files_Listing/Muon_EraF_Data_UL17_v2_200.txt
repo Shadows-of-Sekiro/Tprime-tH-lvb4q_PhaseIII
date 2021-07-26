@@ -1,0 +1,10 @@
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0001/tree_1992.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0001/tree_1993.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0001/tree_1994.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0001/tree_1995.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0001/tree_1996.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0001/tree_1997.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0001/tree_1998.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0001/tree_1999.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0002/tree_2000.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraF/210326_124529/0002/tree_2001.root

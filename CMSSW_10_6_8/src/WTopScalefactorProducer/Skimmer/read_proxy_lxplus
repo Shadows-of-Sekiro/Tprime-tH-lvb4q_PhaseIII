@@ -1,0 +1,3 @@
+cp /tmp/x509up_u94350 /afs/cern.ch/user/a/achhetri/
+
+export X509_USER_PROXY=/afs/cern.ch/user/a/achhetri/x509up_u94350

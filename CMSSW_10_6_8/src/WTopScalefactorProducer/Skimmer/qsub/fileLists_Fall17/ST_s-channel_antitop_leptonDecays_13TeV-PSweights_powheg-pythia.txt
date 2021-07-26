@@ -1,0 +1,4 @@
+/store/mc/RunIIFall17NanoAODv4/ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia/NANOAODSIM/PU2017_12Apr2018_Nano14Dec2018_102X_mc2017_realistic_v6-v1/280000/25454CC1-3E3F-1F4B-B146-CCF7F53A5203.root
+/store/mc/RunIIFall17NanoAODv4/ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia/NANOAODSIM/PU2017_12Apr2018_Nano14Dec2018_102X_mc2017_realistic_v6-v1/280000/B27CDCDB-A725-D240-BD10-CA51E0677B9D.root
+/store/mc/RunIIFall17NanoAODv4/ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia/NANOAODSIM/PU2017_12Apr2018_Nano14Dec2018_102X_mc2017_realistic_v6-v1/280000/0A5EBF09-A166-704F-8EFB-967BDFCAD5FE.root
+/store/mc/RunIIFall17NanoAODv4/ST_s-channel_antitop_leptonDecays_13TeV-PSweights_powheg-pythia/NANOAODSIM/PU2017_12Apr2018_Nano14Dec2018_102X_mc2017_realistic_v6-v1/280000/7CD7B022-90AF-524B-B808-6B09253A326E.root
