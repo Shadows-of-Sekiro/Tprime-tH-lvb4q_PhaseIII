@@ -8,34 +8,34 @@ import os
 #TTbar_mcbkg_test_python.txt
 
 dataset = {
-   'QCD_Pt80to120'                     : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-80to120_MuEnr_UL17_v2.txt',   
-   'QCD_Pt120to170'                    : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-120to170_MuEnr_UL17_v2.txt',   
-   'QCD_Pt170to300'                    : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-170to300_MuEnr_UL17_v2.txt',   
-   'QCD_Pt300to470'                    : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-300to470_MuEnr_UL17_v2.txt',   
-   'QCD_Pt470to600'                    : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-470to600_MuEnr_UL17_v2.txt',   
-   'QCD_Pt600to800'                    : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-600to800_MuEnr_UL17_v2.txt',   
-   'QCD_Pt800to1000'                   : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-800to1000_MuEnr_UL17_v2.txt',   
-   'QCD_Pt1000toInf'                   : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-1000toInf_MuEnr_UL17_v2.txt',   
-   'WJetsToLNu'                        : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJetsToLNu_UL17_v2.txt',   
-   'DYJetsToLL'                        : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_UL17_v2.txt',   
-   'QCD_Pt-50to80_EMEnr_UL17_v2'       :'/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-50to80_EMEnr_UL17_v2.txt',
-   'QCD_Pt-80to120_EMEnr_UL17_v2'      :'/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-80to120_EMEnr_UL17_v2.txt',
-   'QCD_Pt-120to170_EMEnr_UL17_v2'     :'/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-120to170_EMEnr_UL17_v2.txt',
-   'QCD_Pt-170to300_EMEnr_UL17_v2'     :'/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-170to300_EMEnr_UL17_v2.txt',
-   'QCD_Pt-300toInf_EMEnr_UL17_v2'     :'/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-300toInf_EMEnr_UL17_v2.txt',
+   'QCD_Pt80to120'                     : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-80to120_MuEnr_UL17_v2.txt',   
+   'QCD_Pt120to170'                    : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-120to170_MuEnr_UL17_v2.txt',   
+   'QCD_Pt170to300'                    : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-170to300_MuEnr_UL17_v2.txt',   
+   'QCD_Pt300to470'                    : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-300to470_MuEnr_UL17_v2.txt',   
+   'QCD_Pt470to600'                    : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-470to600_MuEnr_UL17_v2.txt',   
+   'QCD_Pt600to800'                    : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-600to800_MuEnr_UL17_v2.txt',   
+   'QCD_Pt800to1000'                   : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-800to1000_MuEnr_UL17_v2.txt',   
+   'QCD_Pt1000toInf'                   : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-1000toInf_MuEnr_UL17_v2.txt',   
+   'WJetsToLNu'                        : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJetsToLNu_UL17_v2.txt',   
+   'DYJetsToLL'                        : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_UL17_v2.txt',   
+   'QCD_Pt-50to80_EMEnr_UL17_v2'       :'/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-50to80_EMEnr_UL17_v2.txt',
+   'QCD_Pt-80to120_EMEnr_UL17_v2'      :'/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-80to120_EMEnr_UL17_v2.txt',
+   'QCD_Pt-120to170_EMEnr_UL17_v2'     :'/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-120to170_EMEnr_UL17_v2.txt',
+   'QCD_Pt-170to300_EMEnr_UL17_v2'     :'/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-170to300_EMEnr_UL17_v2.txt',
+   'QCD_Pt-300toInf_EMEnr_UL17_v2'     :'/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/QCD_Pt-300toInf_EMEnr_UL17_v2.txt',
 
 
-   's-channel'                         : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_s-channel_4f_leptonDecays_UL17_v2.txt',   
-   't-channel_antitop'                 : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_t-channel_antitop_4f_inclusiveDecays_UL17_v2.txt',   
-   't-channel_top'                     : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_t-channel_top_4f_inclusiveDecays_UL17_v2.txt',   
-   'tW_antitop'                        : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_tW_antitop_5f_inclusiveDecays_UL17_v2.txt',   
-   'tW_top'                            : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_tW_top_5f_inclusiveDecays_UL17_v2.txt',   
+   's-channel'                         : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_s-channel_4f_leptonDecays_UL17_v2.txt',   
+   't-channel_antitop'                 : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_t-channel_antitop_4f_inclusiveDecays_UL17_v2.txt',   
+   't-channel_top'                     : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_t-channel_top_4f_inclusiveDecays_UL17_v2.txt',   
+   'tW_antitop'                        : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_tW_antitop_5f_inclusiveDecays_UL17_v2.txt',   
+   'tW_top'                            : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/ST_tW_top_5f_inclusiveDecays_UL17_v2.txt',   
 
-   'WJets_LNu_HT-100To200'                 : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-100To200_UL17_v2.txt',   
-   'WJets_LNu_HT-200To400'                 : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-200To400_UL17_v2.txt',   
+   'WJets_LNu_HT-100To200'                 : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-100To200_UL17_v2.txt',   
+   'WJets_LNu_HT-200To400'                 : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-200To400_UL17_v2.txt',   
    
-   'DYJetsToLL_M-50_HT-100To200'              : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-100To200_UL17_v2.txt',      
-   'DYJetsToLL_M-50_HT-600To800'              : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-600To800_UL17_v2.txt',      
+   'DYJetsToLL_M-50_HT-100To200'              : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-100To200_UL17_v2.txt',      
+   'DYJetsToLL_M-50_HT-600To800'              : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-600To800_UL17_v2.txt',      
 
    }
 

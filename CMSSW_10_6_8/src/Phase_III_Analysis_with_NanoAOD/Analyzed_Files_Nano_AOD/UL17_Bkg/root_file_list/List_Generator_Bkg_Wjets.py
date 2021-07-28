@@ -10,10 +10,10 @@ import os
 dataset = {
 
 
-   'WJets_LNu_HT-400To600'                 : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-400To600_UL17_v2.txt',   
-   'WJets_LNu_HT-600To800'                 : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-600To800_UL17_v2.txt',   
-   'WJets_LNu_HT-800To1200'                : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-800To1200_UL17_v2.txt',      
-   'WJets_LNu_HT-1200To2500'               : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-1200To2500_UL17_v2.txt',   
+   'WJets_LNu_HT-400To600'                 : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-400To600_UL17_v2.txt',   
+   'WJets_LNu_HT-600To800'                 : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-600To800_UL17_v2.txt',   
+   'WJets_LNu_HT-800To1200'                : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-800To1200_UL17_v2.txt',      
+   'WJets_LNu_HT-1200To2500'               : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/WJets_LNu_HT-1200To2500_UL17_v2.txt',   
   
    }
 

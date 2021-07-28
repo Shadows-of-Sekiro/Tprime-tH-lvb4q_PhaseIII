@@ -10,12 +10,12 @@ import os
 dataset = {
 
    
-   'DYJetsToLL_M-50_HT-200To400'              : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-200To400_UL17_v2.txt',      
-   'DYJetsToLL_M-50_HT-400To600'              : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-400To600_UL17_v2.txt',   
-   'DYJetsToLL_M-50_HT-800To1200'             : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-800To1200_UL17_v2.txt',   
-   'DYJetsToLL_M-50_HT-1200To2500'            : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-1200To2500_UL17_v2.txt',   
-   'DYJetsToLL_M-50_HT-2500ToInf'             : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-2500ToInf_UL17_v2.txt',   
-   'DYJetsToLL_M-50_HT-600To800_3'            : '/afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/DYJetsToLL_M-50_HT-600To800_UL17_v2_3.txt',   
+   'DYJetsToLL_M-50_HT-200To400'              : '/afs/cern.ch/work/a/achhetri/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-200To400_UL17_v2.txt',      
+   'DYJetsToLL_M-50_HT-400To600'              : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-400To600_UL17_v2.txt',   
+   'DYJetsToLL_M-50_HT-800To1200'             : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-800To1200_UL17_v2.txt',   
+   'DYJetsToLL_M-50_HT-1200To2500'            : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-1200To2500_UL17_v2.txt',   
+   'DYJetsToLL_M-50_HT-2500ToInf'             : '/afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/List_of_NANO_AOD_paths/DYJetsToLL_M-50_HT-2500ToInf_UL17_v2.txt',   
+   'DYJetsToLL_M-50_HT-600To800_3'            : '/afs/cern.ch/work/a/achhetri/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/DYJetsToLL_M-50_HT-600To800_UL17_v2_3.txt',   
 
    }
 
