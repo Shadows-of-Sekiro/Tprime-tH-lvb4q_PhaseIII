@@ -1,0 +1,1 @@
+g++ -Wno-deprecated $1  BTagCalibrationStandalone.o -o PUPPI.exe -I$ROOTSYS/include -L$ROOTSYS/lib `root-config --cflags` `root-config --libs`

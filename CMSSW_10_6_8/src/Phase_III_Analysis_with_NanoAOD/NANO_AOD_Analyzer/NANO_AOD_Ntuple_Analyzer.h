@@ -29,6 +29,8 @@
 #include <TSystemFile.h>
 #include <TSystemDirectory.h>
 
+// #include "BTagCalibrationStandalone.h"
+// #include "BTagCalibrationStandalone.cpp"
 //#include "TDCacheFile.h"
 
 #include <TCanvas.h>
@@ -2703,6 +2705,8 @@ void Check_Cleaned_Bjet_After_Muon_Isolation( TString WorkingPoint)  {
           if ( Bjet_Selection_After_drCheck( jets, WorkingPoint) == 0 ) continue;
           jet_count ++ ;
           if ( jet_count < 2) Fill_Jet_Hist_Preselction_LvL( "LeptonCleanedbJet" + WorkingPoint ,  jets , jet_count) ;
+
+          // SF = DeepCSV2_bTag_SF_Calculator(CSV_OP, JF, sys_type,(*jetPt)[subbjet_index_1[s]], (*jetEta)[subbjet_index_1[s]]); 
           // cout << "\n WorkingPoint = " << WorkingPoint ;
       }
 
@@ -5683,3 +5687,86 @@ void Tprime_Candidate_Reconstruction( )
   // h_Top2_Mass -> Fill( Top_candidate_2.M() , factor) ;
 
 }
+
+
+
+
+
+
+// ==================================================================================================================================
+// ==================================================================================================================================
+// --------------------------- Scale factors Calculation for Various Objects --------------------------------------------------------
+
+   //---------------------------------------BTagging Scalefactors------------------------------
+
+   // BTagCalibrationReader reader_up(BTagEntry::OP_LOOSE, "up");  // sys up
+
+   BTagEntry::OperatingPoint DeepCSV_OP = BTagEntry::OP_LOOSE; // required for SF calculation
+
+   BTagEntry::JetFlavor jet_Flavor  =  BTagEntry::FLAV_B ; // required for SF calculation
+
+   std::string systype =  "central";
+
+   double DeepCSV2_bTag_SF_Calculator(BTagEntry::OperatingPoint OP, BTagEntry::JetFlavor JF, std::string sys_type, double JetPt, double JetEta){
+   // double DeepCSV2_bTag_SF_Calculator(BTagEntry btag )
+
+             // BTagCalibration calib("csvv2","DeepCSV_106XUL17SF_WPonly_V2p1.csv");
+             BTagCalibration calib("deepcsv","DeepCSV_106XUL17SF_WPonly_V2p1.csv");
+
+             float MaxJetPt;
+             double jet_scalefactor ;             
+
+             std::string mes_type;
+             MaxJetPt = 1000.0;
+
+             if(JF == BTagEntry::FLAV_B || JF == BTagEntry::FLAV_C) mes_type = "comb";
+             if(JF == BTagEntry::FLAV_UDSG) mes_type = "incl";
+            
+             if(sys_type == "central"){
+
+               BTagCalibrationReader reader( OP,                // operating point (LOOSE, MEDIUM, TIGHT OR RESHAPING)
+                                             sys_type.c_str()
+                                              );  // systematics type (central, up, down..)      
+
+               reader.load( calib,               // calibration instance    
+                            JF,                  // btag flavour  
+                            mes_type.c_str());   // measurement type            
+
+
+               if(JetPt > MaxJetPt) JetPt = MaxJetPt;
+               jet_scalefactor = reader.eval(JF, JetEta, JetPt, 0.1355);
+               return jet_scalefactor;
+             }
+
+
+
+             if(sys_type == "up" || sys_type == "down"){
+
+                 Bool_t DoubleUncertainty = false;
+
+                 BTagCalibrationReader reader(OP, "central");
+                 BTagCalibrationReader reader_sys(OP, sys_type.c_str()); //for up or down
+
+                 reader.load(calib, JF, mes_type.c_str());
+                 reader_sys.load(calib, JF, mes_type.c_str());
+
+                 if(JetPt > MaxJetPt){
+                   JetPt = MaxJetPt;
+                   DoubleUncertainty = true;
+                 }
+
+                 jet_scalefactor = reader.eval(JF, JetEta, JetPt, 0.1355);
+                 double jet_scalefactor_sys =  reader_sys.eval(JF, JetEta, JetPt, 0.1355);
+
+                 if (DoubleUncertainty) {
+                   jet_scalefactor_sys = 2*(jet_scalefactor_sys - jet_scalefactor) + jet_scalefactor; //It will work properly for both up and down.
+                                                                                                      //As jet_SF_sys > jet_SF for Up and < jet_SF for down.
+                 }
+
+                 return jet_scalefactor_sys;
+            }
+
+
+}
+
+

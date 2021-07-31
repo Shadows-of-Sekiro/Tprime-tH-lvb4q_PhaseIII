@@ -1,7 +1,7 @@
 // #define DataUL17_Analyzer_NANO_AOD_with_LepJetClean_cxx
 // #include "DataUL17_Analyzer_NANO_AOD_with_LepJetClean.h"
 
-#define UL17_Analyzer_NANO_AOD_with_LepJetClean_cxx
+#define  UL17_Analyzer_NANO_AOD_with_LepJetClean_cxx
 #include "UL17_Analyzer_NANO_AOD_with_LepJetClean.h"
 
 #include <TH2.h>
@@ -14,6 +14,9 @@
 #include <TCanvas.h>
 #include <TLorentzVector.h>
 #include <stdio.h>
+
+#include "BTagCalibrationStandalone.h"
+// #include "BTagCalibrationStandalone.cpp" 
 
 using namespace std;
 
@@ -28,7 +31,11 @@ int main(int argc, char **argv)
         gROOT->ProcessLine("#include <map>");
 
         // UL17_Analyzer_NANO_AOD a(argv[1]);
+
+
+
         UL17_Analyzer_NANO_AOD_with_LepJetClean  a(argv[1]);
+
 
         TString InputTxtFile = argv[1];
         TString OutputFileName = InputTxtFile.ReplaceAll(".txt","");
@@ -185,14 +192,14 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
    if ( Higgs_WP.Contains("Deep") )  OutputFileName = OutputFileName + "_HiggsDeepMD";
 
    // if ( LeptonIsolation.Contains("MiniIso")) OutputFileName  = OutputFileName + "MuIso_" + LeptonIsolation + "_03-Feb-21.root";
-   if ( LeptonIsolation.Contains("MiniIso")) OutputFileName  = OutputFileName + "_LepIso" + "_EvntLvL22-Jul-21.root";   
+   if ( LeptonIsolation.Contains("MiniIso")) OutputFileName  = OutputFileName + "_LepIso" + "_EvntLvL2_28-Jul-21.root";   
    if ( LeptonIsolation.Contains("dR")) OutputFileName  = OutputFileName + "_2DLepIso" ;   
-   if ( LeptonIsolation.Contains("No")) OutputFileName  = OutputFileName + "_EvntLvL22-Jul-21.root";   
-   if ( IsData.Contains("L1VFP"))  OutputFileName  = OutputFileName + "_L1VFP_02-Jul-21.root";
-   if ( IsData.Contains("PileUp"))  OutputFileName  = OutputFileName + "_"+ IsData +"_02-Jul-21.root";
-   if ( IsData.Contains("NoPU"))  OutputFileName  = OutputFileName + "_EvntLvlv2_02-Jul-21.root";
-   if ( IsData.Contains("Data"))  OutputFileName  = OutputFileName + "_EvntLvlv2_02-Jul-21.root";
-   if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "_EvntW_14-Jul-21.root";
+   if ( LeptonIsolation.Contains("No")) OutputFileName  = OutputFileName + "_EvntLvL2_28-Jul-21.root";   
+   if ( IsData.Contains("L1VFP"))  OutputFileName  = OutputFileName + "_L1VFP_28-Jul-21.root";
+   if ( IsData.Contains("PileUp"))  OutputFileName  = OutputFileName + "_"+ IsData +"_28-Jul-21.root";
+   if ( IsData.Contains("NoPU"))  OutputFileName  = OutputFileName + "_EvntLvlv2_28-Jul-21.root";
+   if ( IsData.Contains("Data"))  OutputFileName  = OutputFileName + "_EvntLvlv2_28-Jul-21.root";
+   if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "_EvntW_28-Jul-21.root";
 
 
    // OutputFileName = OutputFileName + "_NoMatchLep_11-12-20.root";
@@ -206,7 +213,7 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
    Long64_t nbytes = 0, nb = 0;
 
-   cout <<"\n Yo man It works";
+   cout <<"\n Yo man It works" << endl;
 
 // ================================Histograms are defined and declared for the root files ===========================
 
@@ -279,8 +286,13 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
    if(Channel.Contains("Muon"))     Lepton_histo_scale_factor   = (TH2F*) Muon_Scale_file->Get("NUM_HighPtID_DEN_genTracks_pair_newTuneP_probe_pt_abseta") ;
    if(Channel.Contains("Electron")) Lepton_histo_scale_factor   = (TH2F*) Electron_Scale_file->Get("EGamma_SF2D") ;
 
+//---------------------------------------BTagging Scalefactors------------------------------
 
+   // BTagCalibrationReader reader_up(BTagEntry::OP_LOOSE, "up");  // sys up
 
+   // BTagEntry::OperatingPoint DeepCSV_OP = BTagEntry::OP_LOOSE; // required for SF calculation
+
+   // BTagEntry::JetFlavor jet_Flavor  =  BTagEntry::FLAV_B ; // required for SF calculation
 // Event Loop started here and main analyzing code starts ==============================================================================
 
 
@@ -295,7 +307,8 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       Cut_Efficiency_Flow->Fill(0.5, factor);     // for Total events in MC sample
 
-	    // cout << "\n\n For Event,   " << jentry ;
+	  // cout << "\n\n For Event,   " << jentry ;
+
       Clear_Vector() ;
 
       //========= Preselection of event requiring atleast of lepton and jet =====================================================================
@@ -499,6 +512,13 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
       Cut_Efficiency_Flow -> Fill (6.5, factor);   // Fatjet tag
 
       if ( n_cleanjet.size() == 0 ) continue ;
+
+      double SF = DeepCSV2_bTag_SF_Calculator(DeepCSV_OP,  jet_Flavor, systype , Jet_pt_clean[0], 1.5); 
+
+
+      // cout << "\n For Event,   " << jentry ;
+
+      // cout << "\n Btag SF = " << SF  << endl ;
 
 
       //=== PRESELECTION LEVEL CLEARED ================///////////////////

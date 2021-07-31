@@ -63,6 +63,7 @@
 #include <TLorentzVector.h>
 #include <TVector3.h>
 #include "TKDE.h"
+#include "BTagCalibrationStandalone.h"
 #ifdef __MAKECINT__ 
 #pragma link C++ class vector<bool>+;
 #pragma link C++ class map<TString,TH1D*>+;
@@ -1991,7 +1992,9 @@ public :
 
    //======Global Variables ================= 
    
-   #include "NANO_AOD_Ntuple_Analyzer.h"   //to include Histogram from another Header file    
+   #include "NANO_AOD_Ntuple_Analyzer.h"   //to include Histogram from another Header file   
+   // #include "BTagCalibrationStandalone.h"
+   // #include "BTagCalibrationStandalone.cpp" 
 };
 
 #endif
