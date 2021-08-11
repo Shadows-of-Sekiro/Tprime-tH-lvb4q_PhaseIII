@@ -15,8 +15,6 @@
 #include <TLorentzVector.h>
 #include <stdio.h>
 
-#include "BTagCalibrationStandalone.h"
-// #include "BTagCalibrationStandalone.cpp" 
 
 using namespace std;
 
@@ -176,6 +174,7 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
    MC_Channel  =  Channel ;
 
+   Efficiency_Read_From_bTagEff_Root_Files(OutputFileName) ;
 
 
    cout <<"\n Factor for " << OutputFileName << " is = " << factor ;
@@ -192,14 +191,14 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
    if ( Higgs_WP.Contains("Deep") )  OutputFileName = OutputFileName + "_HiggsDeepMD";
 
    // if ( LeptonIsolation.Contains("MiniIso")) OutputFileName  = OutputFileName + "MuIso_" + LeptonIsolation + "_03-Feb-21.root";
-   if ( LeptonIsolation.Contains("MiniIso")) OutputFileName  = OutputFileName + "_LepIso" + "_EvntLvL2_28-Jul-21.root";   
+   if ( LeptonIsolation.Contains("MiniIso")) OutputFileName  = OutputFileName + "_LepIso" + "_EvntLvL2_11-Aug-21.root";   
    if ( LeptonIsolation.Contains("dR")) OutputFileName  = OutputFileName + "_2DLepIso" ;   
-   if ( LeptonIsolation.Contains("No")) OutputFileName  = OutputFileName + "_EvntLvL2_28-Jul-21.root";   
-   if ( IsData.Contains("L1VFP"))  OutputFileName  = OutputFileName + "_L1VFP_28-Jul-21.root";
-   if ( IsData.Contains("PileUp"))  OutputFileName  = OutputFileName + "_"+ IsData +"_28-Jul-21.root";
-   if ( IsData.Contains("NoPU"))  OutputFileName  = OutputFileName + "_EvntLvlv2_28-Jul-21.root";
-   if ( IsData.Contains("Data"))  OutputFileName  = OutputFileName + "_EvntLvlv2_28-Jul-21.root";
-   if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "_EvntW_28-Jul-21.root";
+   if ( LeptonIsolation.Contains("No")) OutputFileName  = OutputFileName + "_EvntLvL2_11-Aug-21.root";   
+   if ( IsData.Contains("L1VFP"))  OutputFileName  = OutputFileName + "_L1VFP_11-Aug-21.root";
+   if ( IsData.Contains("PileUp"))  OutputFileName  = OutputFileName + "_"+ IsData +"_11-Aug-21.root";
+   if ( IsData.Contains("NoPU"))  OutputFileName  = OutputFileName + "_EvntLvlv2_11-Aug-21.root";
+   if ( IsData.Contains("Data"))  OutputFileName  = OutputFileName + "_EvntLvlv2_11-Aug-21.root";
+   if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "_bweight_EvntW_11-Aug-21.root";
 
 
    // OutputFileName = OutputFileName + "_NoMatchLep_11-12-20.root";
@@ -228,6 +227,8 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
    Define_DelatR_Histo_for_RecoObject() ;
    Define_Kinematic_Histo_for_HiggsJet() ;
    Define_Histograms_For_LeptonJet_Cleaning_Effect() ;
+
+   Define_2DHistogram_For_BtagEff() ;
 
 
    // Define_Tag_Jet_Histo() ;    // for tagged jets plots at reco level
@@ -301,7 +302,7 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
       
       Long64_t ientry = LoadTree(jentry);
       
-      // if (ientry > 100) break;  // Run it to check for small events otherwise COMMENT IT !!!!
+      // if (ientry > 1000) break;  // Run it to check for small events otherwise COMMENT IT !!!!
 
       nb = fChain->GetEntry(jentry);   nbytes += nb;
 
@@ -513,7 +514,6 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       if ( n_cleanjet.size() == 0 ) continue ;
 
-      double SF = DeepCSV2_bTag_SF_Calculator(DeepCSV_OP,  jet_Flavor, systype , Jet_pt_clean[0], 1.5); 
 
 
       // cout << "\n For Event,   " << jentry ;
@@ -533,6 +533,8 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       if( b_jet.size() == 0 ) continue ;
     
+      Event_Reweighting_Using_SF_N_MC_btageff() ;
+
       Cut_Efficiency_Flow -> Fill ( 8.5, factor); // bjet tag     
 
 
@@ -570,11 +572,15 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       // cout << "\n Lepton_Scale_Factor_ID = "  << Lepton_Scale_Factor_ID  << "  for  Sample = " << IsData;
 
+
+      factor =    btag_weight * factor ;
+
+
       Cut_Efficiency_Flow -> Fill ( 12.5, factor); // Lep-Isolation Selection   
 
       Fill_Object_Population() ;    
 
-	    Fill_Object_Hist_After_Preselction_LvL( "Yes" , IsTopbjet, Channel ) ;      
+	  Fill_Object_Hist_After_Preselction_LvL( "Yes" , IsTopbjet, Channel ) ;      
 
       if ( Higgsjets.size() != 0 ) Fill_HiggsJet_Hist_Preselction_LvL( "FillHiggsJet"  ) ; // Put DeltaR instring to pass DeltaR check for H, mu > 1.2 in plots  
 

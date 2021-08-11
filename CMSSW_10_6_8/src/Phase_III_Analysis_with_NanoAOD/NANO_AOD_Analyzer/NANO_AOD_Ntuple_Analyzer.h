@@ -129,6 +129,7 @@
       vector <int> fatjet_sort  ;
       
       vector <int> b_jetloose;
+      vector <int> not_tagged_bjets ;
 
       
       vector <int> gen_Wboson    ;
@@ -208,6 +209,8 @@
                                                                    {"list_of_Bkgfiles/Bkg_WJets_LNu_HT-2500ToInf_v3_",  0.0045575256  }    
                                                                  } ;                                                                                                                       
   
+
+
     // ===================create an array of Histograms======================
     // Category wise tag object Histogram // main code
   
@@ -402,7 +405,14 @@
       std::array< TH2D*, 4> Hist_DeltaPt_wrt_Pt_LepCleanJet ;
 
       std::array< TH2D*, 4> Hist_SoftDropMass_wrt_Tau42_LeadFatJet ;    
-      std::array< TH2D*, 4> Hist_SoftDropMass_wrt_Tau42_SubLeadFatJet ;          
+      std::array< TH2D*, 4> Hist_SoftDropMass_wrt_Tau42_SubLeadFatJet ;    
+
+      //----HISTOGRAMS SETS FOR bTAGGING EFFICIENCIES -----------------------------
+
+      std::array< TH2D*, 3> Hist_2D_BtagEff_Denom  ;
+      std::array< TH2D*, 3> Hist_2D_BtagEff_Num ;      
+
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////============== NEW SETS OF HISTOGRAM FOR PHASE III==================/////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -449,7 +459,9 @@
          gen_Wboson.clear();
          gen_udscquark.clear();      
 
-         Unmatched_fatjet.clear() ;           
+         Unmatched_fatjet.clear() ;   
+
+         not_tagged_bjets.clear() ;        
       }
 
     // ======================LepIsoCut Study =======================================================
@@ -796,7 +808,38 @@
                                                             // { 18  , "Hist_"}, 
                                                             // { 19  , "Hist_"}, 
                                                             // { 20  , "Hist_"},  
-                                                       } ;          
+     
+                                                       } ;         
+
+   // List for Histogram_BtagEff                                                
+   std::map<int, TString > Histogram_BtagEff_Denom_List = {
+                                                                { 0  , "Hist_2D_BtagEff_Denom_b"}, 
+                                                                { 1  , "Hist_2D_BtagEff_Denom_c"}, 
+                                                                { 2  , "Hist_2D_BtagEff_Denom_udsg"}, 
+                                                                // { 6   , "Denom_"}, 
+                                                                // { 7   , "Denom_"}, 
+                                                                // { 17  , "Hist_"}, 
+                                                                // { 18  , "Hist_"}, 
+                                                                // { 19  , "Hist_"}, 
+                                                                // { 20  , "Hist_"},  
+                                                          } ; 
+
+
+   std::map<int, TString > Histogram_BtagEff_Num_List = {
+                                                              { 0  , "Hist_2D_BtagEff_Num_b"}, 
+                                                              { 1  , "Hist_2D_BtagEff_Num_c"}, 
+                                                              { 2  , "Hist_2D_BtagEff_Num_udsg"}, 
+                                                              // { 6   , "Denom_"}, 
+                                                              // { 7   , "Denom_"}, 
+                                                              // { 17  , "Hist_"}, 
+                                                              // { 18  , "Hist_"}, 
+                                                              // { 19  , "Hist_"}, 
+                                                              // { 20  , "Hist_"},  
+                                                        } ;                                                    
+
+
+
+
     // Muon Isolation variables and working Points are defined using key & map========================================                                                   
     // MiniIso ID from miniAOD selector (1=MiniIsoLoose, 2=MiniIsoMedium, 3=MiniIsoTight, 4=MiniIsoVeryTight)
     std::map<TString, int > LepIso_IDbit = {  
@@ -848,6 +891,56 @@
                                                          {  11 ,  60.0 } ,  // for dr >  0.4 || dpt  >  60.0
                                                       }; 
     //==============Luminosity Normalization for each samples========================================================
+
+    std::map< int, TString> New_Sample_List = {  
+                                                               {  0   , "Tprime_M1000_UL17_v2",                            }, 
+                                                               {  1   , "Tprime_M1500_UL17_v2",                            }, 
+                                                               {  2   , "Tprime_M1800_UL17_v2",                            }, 
+                                                               {  3   , "QCD_Pt-80_MuEnr_UL17_v2",                         }, 
+                                                               {  4   , "QCD_Pt-120_MuEnr_UL17_v2",                        }, 
+                                                               {  5   , "QCD_Pt-170_MuEnr_UL17_v2",                        }, 
+                                                               {  6   , "QCD_Pt-300_MuEnr_UL17_v2",                        }, 
+                                                               {  7   , "QCD_Pt-470_MuEnr_UL17_v2",                        }, 
+                                                               {  8   , "QCD_Pt-600_MuEnr_UL17_v2",                        }, 
+                                                               {  9   , "QCD_Pt-800_MuEnr_UL17_v2",                        }, 
+                                                               {  10  , "QCD_Pt-1000_MuEnr_UL17_v2",                       },
+                                                               {  11  , "ST_s-channel_4f_leptonDecays_UL17_v2"             }, 
+                                                               {  12  , "ST_t-channel_antitop_4f_inclusiveDecays_UL17_v2"  }, 
+                                                               {  13  , "ST_t-channel_top_4f_inclusiveDecays_UL17_v2"     }, 
+                                                               {  14  , "ST_tW_top_5f_inclusiveDecays_UL17_v2"            }, 
+                                                               {  15  , "ST_tW_antitop_5f_inclusiveDecays_UL17_v2"        },
+                                                               {  16  , "TT_to_Hadronic_UL17_v2"     },
+                                                               {  17  , "TT_to_SemiLeptonic_UL17_v2" },
+                                                               {  18  , "TT_to_2L2Nu_UL17_v2"        },     
+                                                               {  19  , "QCD_Pt-50_EMEnr_UL17_v2"  },  
+                                                               {  20  , "QCD_Pt-80_EMEnr_UL17_v2"  },  
+                                                               {  21  , "QCD_Pt-120_EMEnr_UL17_v2" },  
+                                                               {  22  , "QCD_Pt-170_EMEnr_UL17_v2" },  
+                                                               {  23  , "QCD_Pt-300_EMEnr_UL17_v2" },   
+                                                               {  24  , "WJets_LNu_HT-70To100_UL17_v2"    } ,
+                                                               {  25  , "WJets_LNu_HT-100To200_UL17_v2"   } ,
+                                                               {  26  , "WJets_LNu_HT-200To400_UL17_v2"   } ,  
+                                                               {  27  , "WJets_LNu_HT-400To600_UL17_v2"   } ,
+                                                               {  28  , "WJets_LNu_HT-600To800_UL17_v2"   } ,
+                                                               {  29  , "WJets_LNu_HT-800To1200_UL17_v2"  } ,
+                                                               {  30  , "WJets_LNu_HT-1200To2500_UL17_v2" } ,
+                                                               {  31  , "WJets_LNu_HT-2500ToInf_UL17_v2"  } , 
+                                                               {  32  , "DYJetsToLL_M-50_HT-70To100_UL17_v2"   } ,
+                                                               {  33  , "DYJetsToLL_M-50_HT-100To200_UL17_v2"   } ,
+                                                               {  34  , "DYJetsToLL_M-50_HT-200To400_UL17_v2"   } ,  
+                                                               {  35  , "DYJetsToLL_M-50_HT-400To600_UL17_v2"   } ,
+                                                               {  36  , "DYJetsToLL_M-50_HT-600To800_UL17_v2"   } ,
+                                                               {  37  , "DYJetsToLL_M-50_HT-800To1200_UL17_v2"  } ,
+                                                               {  38  , "DYJetsToLL_M-50_HT-1200To2500_UL17_v2" } ,
+                                                               {  39  , "DYJetsToLL_M-50_HT-2500ToInf_UL17_v2"  } , 
+
+                                              
+                                        } ;
+
+
+                                        
+
+
     std::map< int, TString> Sample_List = {  // Xsections are in units fb-1 just remember
                                                                {  0   , "temp"              ,                           }, 
                                                                {  1   , "Tprime_M1000",                            }, 
@@ -1018,13 +1111,23 @@
                                                                {    "DYJetsToLL_M-50_HT-2500ToInf"  , 1480047 } ,                                                                                                                              
                                                                  } ;       
     
-    
+std::map<TString, std::array <float,3> >InputString_outputarray =   {
+                                                               { "Tprime_M1000",         { 1.0, 2.0 ,3.0} },  
+                                                               { "Tprime_M1500",         { 1.5, 2.5 ,3.5} },  
+                                                               { "Tprime_M1800",         { 1.75, 2.75 ,3.5} }, 
+
+                                                                        }  ;
+std::map<TString, std::vector <float> >InputString_outputvec =   {
+                                                               { "Tprime_M1000",         { 1.0, 2.0 ,3.0} },  
+                                                               { "Tprime_M1500",         { 1.5, 2.5 ,3.5} },  
+                                                               { "Tprime_M1800",         { 1.75, 2.75 ,3.5 ,4.0} }, 
+
+                                                                        }  ;
 
 void Luminosity_Normalization(TString sample) {
 
             TString temp_sample = "NONE";
             TString Dataset     = "NONE";
-
 
 
             for (int i = 0; i < 44; ++i)
@@ -1038,6 +1141,8 @@ void Luminosity_Normalization(TString sample) {
             double Xsections    = Sample_X_Section[Dataset];
             double Total_Events = Sample_Total_Events[Dataset] ;
                   cout <<"   Xsections = " << Xsections <<" && Events = " << Total_Events <<endl;
+
+
 
             // double Luminosity   = 35.917150 ;  // in units of fb-1 for 2016
             // double Luminosity   = 59.74 ;  // in units of fb-1 for 2018
@@ -1928,6 +2033,38 @@ void  Define_Histo_of_Pt_wrt_Delta_For_CleanJet()
 }   // END OF THE FUNCTION !!!!!!!!                                                         
 
 
+void Define_2DHistogram_For_BtagEff()  {
+
+        TString Hist_name  = "Hist_2D_BtagEff_";
+        TString Hist_title = "Distribution";
+        
+        // Here Numerator and Denominator histo defined
+
+
+        for (Int_t i = 0; i < 3; i++) {      
+    
+          // For Denominator Histogram ------------------------     
+          Hist_name   =  Histogram_BtagEff_Denom_List[i] ;            
+          Hist_title  =  Histogram_BtagEff_Denom_List[i]  + " Distribution" ; 
+                
+          Hist_2D_BtagEff_Denom.at(i)  = new TH2D(Hist_name, Hist_title, 100, 0.0, 1000.0 , 10, 0.0, 3.0);
+          Hist_2D_BtagEff_Denom.at(i)  ->GetXaxis()->SetTitle("P_{T}(jet)(GeV)");  
+          Hist_2D_BtagEff_Denom.at(i)  ->GetYaxis()->SetTitle("#eta(jet)");  
+
+          // For Numerator Histogram ------------------------
+          Hist_name   =  Histogram_BtagEff_Num_List[i] ;            
+          Hist_title  =  Histogram_BtagEff_Num_List[i]  + " Distribution" ; 
+                
+          Hist_2D_BtagEff_Num.at(i)  = new TH2D(Hist_name, Hist_title, 100, 0.0, 1000.0 , 10, 0.0, 3.0);
+          Hist_2D_BtagEff_Num.at(i)  ->GetXaxis()->SetTitle("P_{T}(jet)(GeV)");  
+          Hist_2D_BtagEff_Num.at(i)  ->GetYaxis()->SetTitle("#eta(jet)"); 
+
+        } // End of LOOP !!!!      
+
+}  // END OF FUNCTION !!!!!!!!!!!!!!!      
+
+
+
 /////////////////=========THIS SECTION FOR DEFINING NEW SETS OF FILLING HOSTOGRAMS FUNCTIONS=============///////////////////////////////////////////////
 
 
@@ -2667,8 +2804,15 @@ bool Bjet_Selection_After_drCheck(int c_jet, TString WorkingPoint) {
                   
                  bjet_pass = true; 
              }
+
+             else {
+
+                 not_tagged_bjets.push_back(c_jet) ;  // for keeping track of not tagged bquarks for weighting
+             }
+
            }
          
+
 
            if (WorkingPoint.Contains("medium") ){
              if ( Jet_btagDeepB[c_jet] >  0.4506) {
@@ -2676,6 +2820,12 @@ bool Bjet_Selection_After_drCheck(int c_jet, TString WorkingPoint) {
                  b_jet.push_back(c_jet) ;     
                  bjet_pass = true; 
              }
+
+             else {
+
+                 not_tagged_bjets.push_back(c_jet) ;  // for keeping track of not tagged bquarks for weighting
+             }
+
            }
 
            if (WorkingPoint.Contains("tight") ){
@@ -2684,6 +2834,12 @@ bool Bjet_Selection_After_drCheck(int c_jet, TString WorkingPoint) {
                  b_jet.push_back(c_jet) ;     
                  bjet_pass = true; 
              }
+
+             else {
+
+                 not_tagged_bjets.push_back(c_jet) ;  // for keeping track of not tagged bquarks for weighting
+             }
+
            }
          
 
@@ -2696,13 +2852,18 @@ void Check_Cleaned_Bjet_After_Muon_Isolation( TString WorkingPoint)  {
 
       int jet_count = -1 ;      
       int jets      = -1 ; 
+      bool bjet_pass = true ; 
 
-      for (int i = 0; i < n_cleanjet.size(); ++i)
+      // for (int i = 0; i < n_cleanjet.size(); ++i)
+      for (int i = 0; i < n_jet.size(); ++i)
       {
-          jets = n_cleanjet[i]  ;
+          // jets = n_cleanjet[i]  ;
+          jets = n_jet[i]  ;
 
           if ( Jet_pt_clean[jets] < 50.0 ) continue ;
           if ( Bjet_Selection_After_drCheck( jets, WorkingPoint) == 0 ) continue;
+
+
           jet_count ++ ;
           if ( jet_count < 2) Fill_Jet_Hist_Preselction_LvL( "LeptonCleanedbJet" + WorkingPoint ,  jets , jet_count) ;
 
@@ -3251,7 +3412,7 @@ void Jet_sorting_pT_based_After_Cleaning(TString Filling) {
           {
                // jmax = n_AK8Jet[i];
                jt   = jet_sort[i] ;
-               Fill_Jet_Hist_Preselction_LvL( "CleanedALLJET",  jt , i) ;   
+               Fill_Jet_Hist_Preselction_LvL( "LeptonCleanJetYes",  jt , i) ;   
           }
       } // END of FIlling Loop !!!!!
 
@@ -5770,3 +5931,280 @@ void Tprime_Candidate_Reconstruction( )
 }
 
 
+
+TH2D* h2_btagefficiency_b;
+TH2D* h2_btagefficiency_c; 
+TH2D* h2_btagefficiency_udsg;
+
+TFile  *bTagEff_file ;   
+
+double btag_weight    = 1.0 ;
+
+
+
+void Efficiency_Read_From_bTagEff_Root_Files(TString sample) {
+
+            TString temp_sample = "NONE";
+            TString Dataset     = "NONE";
+
+
+            for (int i = 0; i < 40; ++i)
+            {
+                  temp_sample = New_Sample_List[i];
+                  if (!( sample.Contains(temp_sample))) continue ;
+                  Dataset     = temp_sample ; 
+            }
+
+            TString InputFilePath = "../BTagEff_Analyzer_For_UltraLegacy/Output_RootFiles_For_BtagEff/" + Dataset + "_ak4_deepCSV_bTaggingEfficiencyMap.root"    ;
+
+            bTagEff_file          = TFile::Open( InputFilePath,"READ");
+
+
+            h2_btagefficiency_b      = (TH2D*) bTagEff_file->Get("efficiency_b") ;
+            h2_btagefficiency_c      = (TH2D*) bTagEff_file->Get("efficiency_c") ;
+            h2_btagefficiency_udsg   = (TH2D*) bTagEff_file->Get("efficiency_udsg") ;
+
+
+}  
+
+
+void Event_Reweighting_Using_SF_N_MC_btageff(){
+
+    // Method 1a) 
+    // Event reweighting using scale factors and MC b-tagging efficiencies
+    // as defined in link : https://twiki.cern.ch/twiki/bin/view/CMS/BTagSFMethods#b_tagging_efficiency_in_MC_sampl
+
+
+    // First set run for btagged jets 
+
+    double  SF  = -99.0 ;
+    double  eta = -99.0 ;
+    double  pt  = -99.0 ;
+
+    int jet  = -1 ;
+    int bin = -99 ;
+    double eff_factor = -99.0 ;
+
+    double pT_bjet    = -99.0 ;
+
+    double prob_data      = 1.0 ; 
+    double prob_mc        = 1.0 ; 
+
+    double not_tagged_prob_mc   = 1.0 ;
+
+    double not_tagged_prob_data = 1.0 ;
+
+    // Reweights for btagged jets
+    for (int i = 0; i < b_jet.size(); ++i)
+    {
+        jet = b_jet[i] ;
+
+        eta         =  fabs( Jet_eta_clean[jet]) ;  
+
+        pT_bjet     =  Jet_pt_clean[jet] ;
+
+
+
+        if ( abs(Jet_partonFlavour[jet]) == 5 ) {  // for b quarks
+
+        jet_Flavor  =  BTagEntry::FLAV_B ;        
+
+        SF = DeepCSV2_bTag_SF_Calculator(DeepCSV_OP,  jet_Flavor, systype , pT_bjet, eta); 
+
+
+        pt         = ( pT_bjet >= 1000.0 ) ? 999.999 : pT_bjet ;  // for pT > 1000.0, scale factors are used as for pT = 1000.0 
+
+        bin        =  h2_btagefficiency_b->FindBin( pt , eta ) ;
+        eff_factor =  h2_btagefficiency_b->GetBinContent( bin ); 
+
+        prob_mc    = prob_mc * eff_factor ;
+
+        prob_data  = prob_data * eff_factor * SF ;
+  
+
+        }
+
+
+        else {
+
+              if ( abs(Jet_partonFlavour[jet]) == 4 ) {  // for C quarks
+
+                  jet_Flavor  =  BTagEntry::FLAV_C ;          
+
+                  SF = DeepCSV2_bTag_SF_Calculator(DeepCSV_OP,  jet_Flavor, systype , pT_bjet, eta); 
+
+                  pt         = ( pT_bjet >= 1000.0 ) ? 999.999 : pT_bjet ;  // for pT > 1000.0, scale factors are used as for pT = 1000.0 
+
+                  bin        =  h2_btagefficiency_c->FindBin( pt , eta ) ;
+                  eff_factor =  h2_btagefficiency_c->GetBinContent( bin ); 
+  
+                  prob_mc    = prob_mc * eff_factor ;
+
+                  prob_data  = prob_data * eff_factor * SF ;
+              }
+
+              else {   // for UDSG quarks
+
+                  jet_Flavor  =  BTagEntry::FLAV_UDSG ;          
+
+                  SF = DeepCSV2_bTag_SF_Calculator(DeepCSV_OP,  jet_Flavor, systype , pT_bjet, eta); 
+
+                  pt         = ( pT_bjet >= 1000.0 ) ? 999.999 : pT_bjet ;  // for pT > 1000.0, scale factors are used as for pT = 1000.0 
+
+                  bin        =  h2_btagefficiency_c->FindBin( pt , eta ) ;
+                  eff_factor =  h2_btagefficiency_c->GetBinContent( bin ); 
+  
+                  prob_mc    = prob_mc * eff_factor ;
+
+                  prob_data  = prob_data * eff_factor * SF ;
+
+              }
+
+        }
+
+    }
+
+
+    // Reweights for not btagged jets
+    for (int i = 0; i < not_tagged_bjets.size(); ++i)
+    {
+        jet = not_tagged_bjets[i] ;
+
+        eta         =  fabs( Jet_eta_clean[jet]) ;  
+
+     
+
+        if ( abs(Jet_partonFlavour[jet]) == 5 ) {  // for b quarks
+
+              jet_Flavor  =  BTagEntry::FLAV_B ;        
+  
+              SF = DeepCSV2_bTag_SF_Calculator(DeepCSV_OP,  jet_Flavor, systype , pT_bjet, eta); 
+
+              pt         = ( pT_bjet >= 1000.0 ) ? 999.999 : pT_bjet ;  // for pT > 1000.0, scale factors are used as for pT = 1000.0 
+
+              bin        =  h2_btagefficiency_b->FindBin( pt , eta ) ;
+              eff_factor =  h2_btagefficiency_b->GetBinContent( bin ); 
+
+              not_tagged_prob_mc   = not_tagged_prob_mc * ( 1.0 - eff_factor ) ;
+
+              not_tagged_prob_data = not_tagged_prob_data * ( 1.0  - SF * eff_factor ) ;
+  
+
+        }
+
+
+        // Reducible parts.... not need of 
+        // else {
+
+        //       if ( abs(Jet_partonFlavour[jet]) == 4 ) {  // for C quarks
+
+        //           jet_Flavor  =  BTagEntry::FLAV_C ;        
+
+        //           SF = DeepCSV2_bTag_SF_Calculator(DeepCSV_OP,  jet_Flavor, systype , pT_bjet, eta); 
+
+        //           pt         = ( pT_bjet >= 1000.0 ) ? 999.999 : pT_bjet ;  // for pT > 1000.0, scale factors are used as for pT = 1000.0 
+
+        //           bin        =  h2_btagefficiency_c->FindBin( pt , eta ) ;
+        //           eff_factor =  h2_btagefficiency_c->GetBinContent( bin ); 
+  
+        //           cout << "\n Efficiency = " << eff_factor <<endl ;
+
+        //       }
+
+        //       else {   // for UDSG quarks
+
+        //           jet_Flavor  =  BTagEntry::FLAV_UDSG ;          
+
+        //           SF = DeepCSV2_bTag_SF_Calculator(DeepCSV_OP,  jet_Flavor, systype , pT_bjet, eta); 
+
+        //           pt         = ( pT_bjet >= 1000.0 ) ? 999.999 : pT_bjet ;  // for pT > 1000.0, scale factors are used as for pT = 1000.0 
+
+        //           bin        =  h2_btagefficiency_c->FindBin( pt , eta ) ;
+        //           eff_factor =  h2_btagefficiency_c->GetBinContent( bin ); 
+  
+        //           cout << "\n Efficiency = " << eff_factor <<endl ;
+
+
+        //       }
+
+
+        // }
+
+    }
+    // jet_Flavor  =  BTagEntry::FLAV_C ; 
+
+    // jet_Flavor  =  BTagEntry::FLAV_UDSG ; 
+
+    cout     << "\n nottaggedprob_mc   = " << not_tagged_prob_mc 
+             << "\n nottaggedprob_data = " << not_tagged_prob_data
+             << endl ;   
+
+    cout     << "\n prob_mc   = " << prob_mc 
+             << "\n prob_data = " << prob_data
+             << endl ;             
+
+    btag_weight  = ( prob_data * not_tagged_prob_data ) / ( prob_mc * not_tagged_prob_mc ) ;
+
+    cout << " \n Final weight = " << btag_weight << endl ;
+
+
+
+}  
+
+
+//===================================================================================================================
+//===================================================================================================================
+//////----------------------OBJECT EFFICIENCY STUDIES ---------------------------------------------------------------
+//====================================================================================================================
+//===================================================================================================================
+
+void Fill_BTaggingEff_2DHistogram( TString WorkingPoint)  {
+
+
+      int jet_count = -1 ;      
+      int jets      = -1 ; 
+
+      float jet_eta = 0.0 ;
+      float btag_discriminator = 0.0 ;
+
+      if ( WorkingPoint.Contains("loose") ) btag_discriminator = 0.1355 ;
+ 
+      for (int i = 0; i < n_jet.size(); ++i)
+      {
+          jets = n_jet[i]  ;
+
+          jet_eta = fabs(Jet_eta_clean[jets] ) ;
+
+          if ( abs(Jet_partonFlavour[jets]) == 5 )  // for b quark flavor
+                {
+                   Hist_2D_BtagEff_Denom[0] -> Fill( Jet_pt_clean[jets], jet_eta) ;
+
+                   if ( Jet_btagDeepB[jets] > btag_discriminator )   Hist_2D_BtagEff_Num[0] -> Fill( Jet_pt_clean[jets], jet_eta) ;              
+                }      
+
+
+          else{
+
+                if ( abs(Jet_partonFlavour[jets]) == 4 )  // for c quark flavor
+                   {
+                      Hist_2D_BtagEff_Denom[1] -> Fill( Jet_pt_clean[jets], jet_eta) ;
+
+                      if ( Jet_btagDeepB[jets] > btag_discriminator )   Hist_2D_BtagEff_Num[1] -> Fill( Jet_pt_clean[jets], jet_eta) ;              
+                   }      
+
+
+               else  // for uds quark & g  flavor
+                   {
+                      // cout << "\n parton flavor = " << Jet_partonFlavour[jets] ;
+                      Hist_2D_BtagEff_Denom[2] -> Fill( Jet_pt_clean[jets], jet_eta) ;
+
+                      if ( Jet_btagDeepB[jets] > btag_discriminator )   Hist_2D_BtagEff_Num[2] -> Fill( Jet_pt_clean[jets], jet_eta) ;              
+                   }  
+
+          }          
+
+
+      }
+
+
+}    ////END OF FUNCTION !!!!!!!!!

@@ -98,7 +98,7 @@ mkdir UL17_Wjets_To_LNu_Files/
 mkdir UL17_DYjetsTo_LL_Files/
 mkdir UL17_SingleTop_Files/
 
-cd /afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/NANO_AOD_Analyzer
+cd /afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/NANO_AOD_Analyzer
 
 
 cd ../../../../
