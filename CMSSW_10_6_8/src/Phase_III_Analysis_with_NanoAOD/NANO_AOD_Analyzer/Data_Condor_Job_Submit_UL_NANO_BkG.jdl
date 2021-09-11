@@ -1,4 +1,4 @@
-+JobFlavour = "microcentury"
++JobFlavour = "workday"
 universe = vanilla
 Executable = Data_Condor_Job_UL_NANO_BkG.sh
 

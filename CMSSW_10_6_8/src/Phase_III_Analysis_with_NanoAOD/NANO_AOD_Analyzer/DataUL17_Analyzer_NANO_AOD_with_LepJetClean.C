@@ -114,8 +114,8 @@ int main(int argc, char **argv)
         }
 
 
-        if( OutputFileName.Contains("Muon"))     a.Loop(OutputFileName.Data(), "Muonic" ,     "dR_04_OR_dPt_40" ,"PT300SD90-160Deep10", "MuonSampleData");
-        if( OutputFileName.Contains("Electron")) a.Loop(OutputFileName.Data(), "Electronic" , "dR_04_OR_dPt_40" ,"PT300SD90-160Deep10", "ElectronSampleData");   
+        if( OutputFileName.Contains("Muon"))     a.Loop(OutputFileName.Data(), "Muonic" ,     "dR_04_OR_dPt_40" ,"PT300SD90-160Deep10", "MuonDataSample");
+        if( OutputFileName.Contains("Electron")) a.Loop(OutputFileName.Data(), "Electronic" , "dR_04_OR_dPt_40" ,"PT300SD90-160Deep10", "ElectronDataSample");   
 } 
 
 
@@ -170,11 +170,13 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
       Luminosity_Normalization(OutputFileName) ; 
       
       factor      = lumi_factor ;
+
+      Efficiency_Read_From_bTagEff_Root_Files(OutputFileName) ;
+
    }  
 
    MC_Channel  =  Channel ;
 
-   Efficiency_Read_From_bTagEff_Root_Files(OutputFileName) ;
 
 
    cout <<"\n Factor for " << OutputFileName << " is = " << factor ;
@@ -194,11 +196,14 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
    if ( LeptonIsolation.Contains("MiniIso")) OutputFileName  = OutputFileName + "_LepIso" + "_EvntLvL2_11-Aug-21.root";   
    if ( LeptonIsolation.Contains("dR")) OutputFileName  = OutputFileName + "_2DLepIso" ;   
    if ( LeptonIsolation.Contains("No")) OutputFileName  = OutputFileName + "_EvntLvL2_11-Aug-21.root";   
+   
    if ( IsData.Contains("L1VFP"))  OutputFileName  = OutputFileName + "_L1VFP_11-Aug-21.root";
    if ( IsData.Contains("PileUp"))  OutputFileName  = OutputFileName + "_"+ IsData +"_11-Aug-21.root";
    if ( IsData.Contains("NoPU"))  OutputFileName  = OutputFileName + "_EvntLvlv2_11-Aug-21.root";
-   if ( IsData.Contains("Data"))  OutputFileName  = OutputFileName + "_EvntLvlv2_11-Aug-21.root";
-   if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "_bweight_EvntW_11-Aug-21.root";
+
+   if ( IsData.Contains("Data"))  OutputFileName  = OutputFileName + "EvntLvl_02-Sep-21.root";
+   if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "bweight_EvntW_02-Sep-21.root";
+   // if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "_EvntW_17-Aug-21.root";
 
 
    // OutputFileName = OutputFileName + "_NoMatchLep_11-12-20.root";
@@ -248,7 +253,6 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
    int check = -1 ;
    float  PU_factor = 1.0 ;
 
-   int   top_lepton = -1 ;
    float top_mass   = 0.0 ;
 
    bool Lepton_Trigger = false ;
@@ -308,7 +312,6 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       Cut_Efficiency_Flow->Fill(0.5, factor);     // for Total events in MC sample
 
-	  // cout << "\n\n For Event,   " << jentry ;
 
       Clear_Vector() ;
 
@@ -462,7 +465,9 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       Check_Cleaned_Bjet_After_Muon_Isolation( Filling_at_Preselection + "loose");
 
+
 	  //====== Jet Selection Ends=====================================================================================================
+
       //////============= Higgs Tagging Selections and Some Fucking Test ======================================///////////////////////////////////////////////
 
       if ( Filling_at_Preselection.Contains("No") && (!Higgs_WP.Contains("No")) ) HiggsTagging_Using_PT_SD_Tau_N_Deep( Higgs_WP ) ;
@@ -470,13 +475,12 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
       Hist_for_Leading_HiggsJet.at(16) ->Fill( Higgsjets.size(), factor );
 
     
+      // Use @PreSelection or @EventSelection to define the selection level
+      // Check_DeltaR_of_Higgs_wrt_Top_Lepton( Channel, "Mass@PreSelection" ); 
 
-      Check_DeltaR_of_Higgs_wrt_Top_Lepton( Channel, "Mass" );
+      // Hist_for_Leading_HiggsJet.at(22) ->Fill( DeltaR_Cleared_Higgsjet.size(), factor );
 
-      Hist_for_Leading_HiggsJet.at(22) ->Fill( DeltaR_Cleared_Higgsjet.size(), factor );
-
-
-      if ( DeltaR_Cleared_Higgsjet.size() != 0 ) Cut_Higgs_Tagging_Flow -> Fill(2.5, factor) ;
+      // if ( DeltaR_Cleared_Higgsjet.size() != 0 ) Cut_Higgs_Tagging_Flow -> Fill(2.5, factor) ;
 
 
       ///////-========-HERE WE AFTER SELECTION OF EACH PBJECTS AND TEST WE CHECK SELECTIONS AND FILL SELECTION FLOW HISTOGRAMS  =====---/////////////////////////
@@ -486,7 +490,9 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       if( Channel.Contains("Electron") )       nLepton = n_ele.size() ;
 
-      Lepton_Scale_Factor_ID =  factor ;  // KEEPING LEPTON SCALE ID FACTOR SAME AS OTHER EVENT FACTORS, UNTILL CALCULATED      
+      Lepton_Scale_Factor_ID  =  factor ;  // KEEPING LEPTON SCALE ID FACTOR SAME AS OTHER EVENT FACTORS, UNTILL CALCULATED     
+
+      btag_weight  =  factor ;  // KEEPING LEPTON SCALE ID FACTOR SAME AS OTHER EVENT FACTORS, UNTILL CALCULATED     
 
       // Fill_Object_Population() ;    
 
@@ -501,10 +507,12 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       Cut_Efficiency_Flow -> Fill( 4.5, factor);    // METcut 
 
+
       // if ( ( n_Mu.size() + n_ele.size() ) == 0 )  continue ;
       if ( ( nLepton ) == 0 )  continue ;
 
       Cut_Efficiency_Flow -> Fill ( 5.5, factor);   // Lepton tag in the event
+
 
       jet_copy = n_cleanjet;  
 
@@ -514,6 +522,7 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       if ( n_cleanjet.size() == 0 ) continue ;
 
+      Cut_Efficiency_Flow -> Fill ( 7.5, factor);  // Clean jet tag
 
 
       // cout << "\n For Event,   " << jentry ;
@@ -523,66 +532,100 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       //=== PRESELECTION LEVEL CLEARED ================///////////////////
 
-      Cut_Efficiency_Flow -> Fill ( 7.5, factor);  // Clean jet tag
-
       Scalar_Sum_pT_Function( Channel) ; // Fiiled and calculated after preselection 
 
       if (Filling_at_Preselection.Contains("No")) ST_Sum_Presel -> Fill(Scalar_Sum_pT, factor) ;
 
       // Fill_Object_Hist_After_Preselction_LvL( "Yes" ) ;
 
+      //=== Event- SELECTION LEVEL Follows ================///////////////////
+
+
       if( b_jet.size() == 0 ) continue ;
-    
-      Event_Reweighting_Using_SF_N_MC_btageff() ;
+
+      // cout << "\n\n For Event,   " << jentry ;
 
       Cut_Efficiency_Flow -> Fill ( 8.5, factor); // bjet tag     
 
+      
+      //--- top lepton selected using 2D Lepton Isolation------------
 
-      // ST Selection cut  
-      ST_Sum_LeadObj -> Fill( Scalar_Sum_pT, factor) ;
-
-      if ( Scalar_Sum_pT < 500.0) continue ;
-
-
-      Cut_Efficiency_Flow -> Fill ( 9.5, factor); // ST cut  
-
-      if ( Higgsjets.size() == 0 ) continue ;
-
-      // cout <<"\n Damn man!!";
-      Cut_Efficiency_Flow -> Fill ( 10.5, factor); // Higgjet Tag
-
-      Cut_Efficiency_Flow -> Fill ( 11.5, factor); // Mas and  DeltaR check for H, mu > 1.2   
-
-      if ( Channel.Contains("Muonic") ) 	top_lepton = Selection_Lepton_Isolation_Using_MiniIso_2DLepIso (LeptonIsolation, Filling_at_Preselection);
+      if ( Channel.Contains("Muonic") )     top_lepton = Selection_Lepton_Isolation_Using_MiniIso_2DLepIso (LeptonIsolation, Filling_at_Preselection);
 
       if ( Channel.Contains("Electronic") ) top_lepton = Selection_Electron_Isolation_Using_MiniIso_2DLepIso (LeptonIsolation, Filling_at_Preselection);
 
       // cout << " \n top_lepton = " << top_lepton ;
    
       if ( top_lepton == -1 ) continue ; // lepton after passing Isolation is reffered now as top_lepton
+
+      Cut_Efficiency_Flow -> Fill ( 9.5, factor); // Lep-Isolation Selection   
+
+
+      //--------- Higgjet Tag --------
+
+      if ( Higgsjets.size() == 0 ) continue ;
+
+      Cut_Efficiency_Flow -> Fill ( 10.5, factor); // Higgjet Tag
+
+
+      //--- DeltaRHiggjet Check --------------------
+      //--- Use @PreSelection or @EventSelection to define the selection level -----
+
+      Check_DeltaR_of_Higgs_wrt_Top_Lepton( Channel, "DeltaR@EventSelection" ); 
+
+
+      if ( DeltaR_Cleared_Higgsjet.size() == 0 ) continue ;
+
+      Cut_Efficiency_Flow -> Fill ( 11.5, factor); // Mass and  DeltaR check for H, top-lepton > 1.2   
+  
+      Cut_Efficiency_Flow -> Fill ( 12.5, factor); // Mass and  DeltaR check for H, top-b > 1.2  
+
+ 
+      //--- ST Selection cut  ---------------
+
+      ST_Sum_LeadObj -> Fill( Scalar_Sum_pT, factor) ;
+
+      Scalar_Sum_pT_atEventSelection( top_lepton, Channel) ;
+
+      if ( Scalar_Sum_pT < 500.0) continue ;
+
+      Cut_Efficiency_Flow -> Fill ( 13.5, factor); // ST cut  
+
+
+
+      //==== Object Reweights Calculations Follows -------------------------------
+
+
+      if (IsData.Contains("MCSample")) Event_Reweighting_Using_SF_N_MC_btageff() ;  //Btag Weight Calculated for MC Sample
+
+      factor =    btag_weight * factor ;
+
       
-      if ( Channel.Contains("Muonic") )      Lepton_Scale_Factor_ID = Muon_ID_ScaleFactor_UL2017( Muon_pt[top_lepton], Muon_eta[top_lepton]) ;
+      if ( IsData.Contains("MCSample") && Channel.Contains("Muonic") )      Lepton_Scale_Factor_ID = Muon_ID_ScaleFactor_UL2017( Muon_pt[top_lepton], Muon_eta[top_lepton]) ;
       
-      if ( Channel.Contains("Electronic"))   Lepton_Scale_Factor_ID = Electron_ID_ScaleFactor_UL2017( Electron_pt[top_lepton], Electron_eta[top_lepton]) ;
+      if ( IsData.Contains("MCSample") && Channel.Contains("Electronic"))   Lepton_Scale_Factor_ID = Electron_ID_ScaleFactor_UL2017( Electron_pt[top_lepton], Electron_eta[top_lepton]) ;
 
 
-      if ( IsData.Contains("NoPU"))          Lepton_Scale_Factor_ID =  factor ;  // KEEPING LEPTON SCALE ID FACTOR SAME AS OTHER EVENT FACTORS, UNTILL CALCULATED      
+      // if ( IsData.Contains("NoPU"))          Lepton_Scale_Factor_ID =  factor ;  // KEEPING LEPTON SCALE ID FACTOR SAME AS OTHER EVENT FACTORS, UNTILL CALCULATED      
 
-      else       Lepton_Scale_Factor_ID = Lepton_Scale_Factor_ID * factor ;
+      // else       Lepton_Scale_Factor_ID = Lepton_Scale_Factor_ID * factor ;
+
+      Lepton_Scale_Factor_ID = Lepton_Scale_Factor_ID * factor ;
 
       // cout << "\n Lepton_Scale_Factor_ID = "  << Lepton_Scale_Factor_ID  << "  for  Sample = " << IsData;
 
 
-      factor =    btag_weight * factor ;
 
+      // ======== Filling of Object Distributions ================================
 
-      Cut_Efficiency_Flow -> Fill ( 12.5, factor); // Lep-Isolation Selection   
-
-      Fill_Object_Population() ;    
+      Fill_Object_Population() ;          
 
 	  Fill_Object_Hist_After_Preselction_LvL( "Yes" , IsTopbjet, Channel ) ;      
 
-      if ( Higgsjets.size() != 0 ) Fill_HiggsJet_Hist_Preselction_LvL( "FillHiggsJet"  ) ; // Put DeltaR instring to pass DeltaR check for H, mu > 1.2 in plots  
+      Fill_HiggsJet_Hist_Preselction_LvL( "FillHiggsJetDeltaRClear@Event", Channel  ) ; // Put DeltaR instring to fill DeltaRCleared Higgs  
+
+      Hist_for_Leading_HiggsJet.at(22) ->Fill( DeltaR_Cleared_Higgsjet.size(), factor );
+
 
       Top_Candidate_Check(top_lepton, Channel) ;
 
@@ -591,10 +634,14 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       ST_Sum_Evesel -> Fill( Scalar_Sum_pT, factor) ;    
 
+
+
    }// EVENT LOOP ENDED HERE AND MAIN ANALYZING CODE ENDS !!!!!!!!!====================!!!!!!!!!!!!!!!!!
 
-   // cout <<"\n Factor for " << OutputFileName << " is = " << factor ;
-    
+   cout <<"\n Factor for " << OutputFileName << " is = " << factor ;
+   cout <<"\n BtagFactor for " << OutputFileName << " is = " << btag_weight ;
+   cout <<"\n LeptonFactor for " << OutputFileName << " is = " << Lepton_Scale_Factor_ID ;
+   
    // Muon_Scale_file->Close();
    // PileUp_file->Close();
 

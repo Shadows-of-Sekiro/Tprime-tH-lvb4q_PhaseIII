@@ -1,4 +1,4 @@
-+JobFlavour = "longlunch"
++JobFlavour = "workday"
 universe = vanilla
 Executable = MC_Condor_Job_UL_NANO_BkG.sh
 
@@ -14,8 +14,9 @@ x509userproxy = $ENV(X509_USER_PROXY)
 Arguments = $(filename)
 
 
+
+Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/ST*UL17_*.txt
 Queue filename matching files ../Analyzed_Files_Nano_AOD/UL_TTbar/root_text_files_list/TT_to*.txt
 Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/QCD_*UL17_*.txt
 Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/WJets_LNu_HT*UL17_*.txt
 Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/DYJetsToLL_M-50_HT*UL17_*.txt
-Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/ST*UL17_*.txt

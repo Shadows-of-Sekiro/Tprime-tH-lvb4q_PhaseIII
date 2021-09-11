@@ -46,7 +46,7 @@ datasets = [
   ], 
 
   [
-    'ST_s-channel_UL17_v2', # dataset name
+    'ST_s-channel_4f_leptonDecays_UL17_v2', # dataset name
     {'b':    [[0., 40., 60., 80., 100., 150., 200., 300., 400., 500., 600., 700., 800., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for b jets
      'c':    [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for c jets
      'udsg': [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]]},  # jet Pt and |eta| bins for udsg jets
@@ -54,7 +54,7 @@ datasets = [
   ], 
 
   [
-    'ST_t-channel_antitop_UL17_v2', # dataset name
+    'ST_t-channel_antitop_4f_inclusiveDecays_UL17_v2', # dataset name
     {'b':    [[0., 40., 60., 80., 100., 150., 200., 300., 400., 500., 600., 700., 800., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for b jets
      'c':    [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for c jets
      'udsg': [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]]},  # jet Pt and |eta| bins for udsg jets
@@ -62,7 +62,7 @@ datasets = [
   ], 
 
   [
-    'ST_t-channel_top_UL17_v2', # dataset name
+    'ST_t-channel_top_4f_inclusiveDecays_UL17_v2', # dataset name
     {'b':    [[0., 40., 60., 80., 100., 150., 200., 300., 400., 500., 600., 700., 800., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for b jets
      'c':    [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for c jets
      'udsg': [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]]},  # jet Pt and |eta| bins for udsg jets
@@ -70,7 +70,7 @@ datasets = [
   ],  
 
   [
-    'ST_tW_top_UL17_v2', # dataset name
+    'ST_tW_top_5f_inclusiveDecays_UL17_v2', # dataset name
     {'b':    [[0., 40., 60., 80., 100., 150., 200., 300., 400., 500., 600., 700., 800., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for b jets
      'c':    [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for c jets
      'udsg': [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]]},  # jet Pt and |eta| bins for udsg jets
@@ -78,7 +78,7 @@ datasets = [
   ],       
 
   [
-    'ST_tW_antitop_UL17_v2', # dataset name
+    'ST_tW_antitop_5f_inclusiveDecays_UL17_v2', # dataset name
     {'b':    [[0., 40., 60., 80., 100., 150., 200., 300., 400., 500., 600., 700., 800., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for b jets
      'c':    [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]],  # jet Pt and |eta| bins for c jets
      'udsg': [[0., 40., 60., 80., 100., 150., 200., 1000.],[0., 0.6, 1.2, 2.4]]},  # jet Pt and |eta| bins for udsg jets

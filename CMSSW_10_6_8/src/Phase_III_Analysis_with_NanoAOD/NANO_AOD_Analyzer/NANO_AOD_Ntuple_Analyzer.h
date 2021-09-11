@@ -82,7 +82,9 @@
     int top_muon = -1 ;
     int top_electron = -1 ;
     int nearest_jet = -1 ;
-    int top_bjet  = -1 ;
+    int top_bjet    = -1 ;
+    int top_lepton  = -1 ;
+
 
     float  P_zv_1         = 0.0 ;
     float  P_zv_2         = 0.0 ;
@@ -1377,12 +1379,12 @@ void Find_Object_type_From_Sample(TString sample) {
                                          "AK8 Jet Tag" ,                //6 
                                          "Clean Jet Tag",               //7             
                                          "bjet tag",                    //8    
-                                         "ST Cut"  ,                    //9   
+                                         "Lep Iso"  ,                   //9   
                                          "Higgs Tag",                   //10    
-                                         "Higgs MassCheck",             //11    
-                                         "Lep Iso",                     //12                                          
+                                         "dR check(top_lep, H)",        //11    
+                                         "dR check(top_b, H)",          //12                                          
                                          "ST Cut"  ,                    //13  
-                                         "dR check(mu, H)",             //14                                                                              
+                                         "Higgs MassCheck",             //14                                                                              
                                          // "dR check(bjet)" ,             //13                                                             
                                          // "Higgs_Pt Cut",                //14                                           
 
@@ -2356,7 +2358,7 @@ void   Fill_FatJet_Hist_Preselction_LvL( TString fatjet, int fatjet_index , int 
 
 ////////////------  Filling HiggsJet ------------------- ///////////////////////////////////////////////////////
 
-void   Fill_HiggsJet_Hist_Preselction_LvL( TString fatjet )
+void   Fill_HiggsJet_Hist_Preselction_LvL( TString fatjet , TString LeptonType )
 {
   // Put "FillHiggsJet" string to only fill
 
@@ -2391,7 +2393,9 @@ void   Fill_HiggsJet_Hist_Preselction_LvL( TString fatjet )
     Hist_for_Leading_HiggsJet.at(15)   ->Fill(FatJet_eta_clean[fatjet_index], factor ) ;
     Hist_for_Leading_HiggsJet.at(21)   ->Fill(msoftdrop_corr, factor ) ;
   
-    Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( fatjet_index , fatjet);     
+    if (fatjet.Contains("Pre"))   Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( fatjet_index , fatjet, LeptonType);     
+
+    if (fatjet.Contains("Event")) DeltaR_Higgs_wrt_TopProd_atEvntSel( fatjet_index , LeptonType);         
   }
 
   
@@ -2399,7 +2403,7 @@ void   Fill_HiggsJet_Hist_Preselction_LvL( TString fatjet )
 } // END of the function !!!!!!!!!!!
 
 
-void  Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( int Higgs_index , TString TopbjetCheck)
+void  Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( int Higgs_index , TString TopbjetCheck ,TString LeptonType)
 {
       // Histogram index 17  for  "Hist_DeltaR_HiggsJet_wrt_lep (muon or ele)
       // Histogram index 18  for  "Hist_DeltaR_HiggsJet_wrt_jet1
@@ -2416,18 +2420,32 @@ void  Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( int Higgs_index , TString TopbjetC
 
       int   hist_index   = -1 ;  // index for clean jet
 
-      // DELTAr wrt Muon
-      if ( n_Mu.size() > 0){
-
-          top_prod       = n_Mu[0];
+      //---- In case of muonic channel 
+      if ( LeptonType.Contains("Muon") && n_Mu.size() != 0) {
+        
+          top_prod       = n_Mu[0];  
           top_prod_eta   = Muon_eta[top_prod] ;
           top_prod_phi   = Muon_phi[top_prod] ;
 
           dR_Calculator(Higgs_eta, Higgs_phi, top_prod_eta, top_prod_phi) ;
     
           Hist_for_Leading_HiggsJet.at(17)  ->Fill(dR, factor ) ;
+      }
+  
+      //---- In case of electronic channel
+      if ( LeptonType.Contains("Electron") && n_ele.size() != 0) {
+        
+        
+          top_prod       = n_ele[0]; 
+          top_prod_eta   = Electron_eta[top_prod] ;
+          top_prod_phi   = Electron_phi[top_prod] ;
 
-      } // Muon Loop Ended !!!!!!!
+          dR_Calculator(Higgs_eta, Higgs_phi, top_prod_eta, top_prod_phi) ;
+    
+          Hist_for_Leading_HiggsJet.at(17)  ->Fill(dR, factor ) ;        
+
+      }
+
       
       // Delta r wrt to clean jets
 
@@ -2452,6 +2470,63 @@ void  Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( int Higgs_index , TString TopbjetC
         Hist_for_Leading_HiggsJet.at(hist_index)  ->Fill(dR, factor ) ;
 
       } // Clean Jet Loop Ended !!!!!!!
+
+
+} // END of the function !!!!!!!!!!!
+
+void  DeltaR_Higgs_wrt_TopProd_atEvntSel( int Higgs_index , TString LeptonType)
+{
+      // Histogram index 17  for  "Hist_DeltaR_HiggsJet_wrt_lep (muon or ele)
+      // Histogram index 18  for  "Hist_DeltaR_HiggsJet_wrt_jet1
+      // Histogram index 19  for  "Hist_DeltaR_HiggsJet_wrt_jet2
+      // Histogram index 20  for  "Hist_DeltaR_HiggsJet_wrt_jet3
+      
+
+      float Higgs_eta = FatJet_eta_clean[Higgs_index] ;
+      float Higgs_phi = FatJet_phi_clean[Higgs_index] ;
+
+      float top_prod_eta = 0.0 ; 
+      float top_prod_phi = 0.0 ; 
+      int   top_prod     = -1 ;
+
+
+      //---- In case of muonic channel 
+      if ( LeptonType.Contains("Muon") ) {
+        
+          top_prod       = top_lepton;
+          top_prod_eta   = Muon_eta[top_prod] ;
+          top_prod_phi   = Muon_phi[top_prod] ;
+
+          dR_Calculator(Higgs_eta, Higgs_phi, top_prod_eta, top_prod_phi) ;
+    
+          Hist_for_Leading_HiggsJet.at(17)  ->Fill(dR, factor ) ;
+      }
+  
+      //---- In case of electronic channel
+      if ( LeptonType.Contains("Electron")) {
+        
+        
+          top_prod       = top_lepton;
+          top_prod_eta   = Electron_eta[top_prod] ;
+          top_prod_phi   = Electron_phi[top_prod] ;
+
+          dR_Calculator(Higgs_eta, Higgs_phi, top_prod_eta, top_prod_phi) ;
+    
+          Hist_for_Leading_HiggsJet.at(17)  ->Fill(dR, factor ) ;        
+
+      }
+
+     
+      // DeltaR wrt to top bjet
+
+      top_prod         = b_jet[0] ;
+      top_prod_eta     = Jet_eta_clean[top_prod] ;
+      top_prod_phi     = Jet_phi_clean[top_prod] ;       
+
+      dR_Calculator(Higgs_eta, Higgs_phi, top_prod_eta, top_prod_phi) ;
+    
+      Hist_for_Leading_HiggsJet.at(18)  ->Fill(dR, factor ) ;
+
 
 
 } // END of the function !!!!!!!!!!!
@@ -2560,7 +2635,7 @@ void  Check_Electrons_For_Event_N_Fill(TString Filling)
         if ( eleEta > 1.44 && eleEta < 1.56  )    continue ;          
 
 
-        if (Electron_pt[i] < 40.0 )             continue ;  
+        if (Electron_pt[i] < 50.0 )             continue ;  
 
         n_ele.push_back(i);
         
@@ -2854,11 +2929,11 @@ void Check_Cleaned_Bjet_After_Muon_Isolation( TString WorkingPoint)  {
       int jets      = -1 ; 
       bool bjet_pass = true ; 
 
-      // for (int i = 0; i < n_cleanjet.size(); ++i)
-      for (int i = 0; i < n_jet.size(); ++i)
+      for (int i = 0; i < n_cleanjet.size(); ++i)
+      // for (int i = 0; i < n_jet.size(); ++i)
       {
-          // jets = n_cleanjet[i]  ;
-          jets = n_jet[i]  ;
+          jets = n_cleanjet[i]  ;
+          // jets = n_jet[i]  ;
 
           if ( Jet_pt_clean[jets] < 50.0 ) continue ;
           if ( Bjet_Selection_After_drCheck( jets, WorkingPoint) == 0 ) continue;
@@ -3752,6 +3827,39 @@ void Scalar_Sum_pT_LeadObj_Function( TString LeptonType)
   
 }
 
+
+void Scalar_Sum_pT_atEventSelection( int Lepton, TString LeptonType)
+{
+  
+  Scalar_Sum_pT =  MET_pt ;
+
+  int    b2 = -1 ;
+ 
+  //---- In case of muon channel 
+  if ( LeptonType.Contains("Muon") ) {        
+  
+    Scalar_Sum_pT += Muon_pt[Lepton]  ;
+
+  }
+  
+  //---- In case of electron channel
+  if ( LeptonType.Contains("Electron") ) {
+     
+    Scalar_Sum_pT += Electron_pt[Lepton]  ;
+
+  }
+
+  b2            = b_jet[0];  //topbjet pT
+
+  Scalar_Sum_pT += Jet_pt_clean[b2] ;
+
+  b2            = Higgsjets[0];   //Higgsjet pT
+
+  Scalar_Sum_pT += FatJet_pt_clean[b2];
+
+}
+
+
 // Here we are confirming that Higgs far from muon
 // As per final decay state of Tprime
 void  Check_DeltaR_of_Higgs_wrt_Top_Lepton( TString LeptonType, TString Mass_or_dR_Check )
@@ -3777,8 +3885,9 @@ void  Check_DeltaR_of_Higgs_wrt_Top_Lepton( TString LeptonType, TString Mass_or_
       //---- In case of muonic channel 
       if ( LeptonType.Contains("Muon") && n_Mu.size() != 0) {
         
-        top_prod_index = n_Mu[0];  
-  
+        if(  Mass_or_dR_Check.Contains("Pre"))    top_prod_index = n_Mu[0];  
+        if(  Mass_or_dR_Check.Contains("Event"))  top_prod_index = top_lepton;
+
         top_prod_eta = Muon_eta[top_prod_index] ;
         top_prod_phi = Muon_phi[top_prod_index] ;
 
@@ -3787,8 +3896,10 @@ void  Check_DeltaR_of_Higgs_wrt_Top_Lepton( TString LeptonType, TString Mass_or_
       //---- In case of electronic channel
       if ( LeptonType.Contains("Electron") && n_ele.size() != 0) {
         
-        top_prod_index = n_ele[0];  
-  
+        
+        if(  Mass_or_dR_Check.Contains("Pre"))    top_prod_index = n_ele[0];    
+        if(  Mass_or_dR_Check.Contains("Event"))  top_prod_index = top_lepton;
+
         top_prod_eta = Electron_eta[top_prod_index] ;
         top_prod_phi = Electron_phi[top_prod_index] ;
 
@@ -3821,6 +3932,7 @@ void  Check_DeltaR_of_Higgs_wrt_Top_Lepton( TString LeptonType, TString Mass_or_
       // h_Higgs_Mass -> Fill( FatJet_mass_clean[Higgs_index], factor);
   
   } // END of the function !!!!!!!!!!!
+
 
 // Here we are confirming that bjet is far from Higgs and not so far from muon
 // As per final decay state of Tprime
@@ -6051,8 +6163,8 @@ void Event_Reweighting_Using_SF_N_MC_btageff(){
 
                   pt         = ( pT_bjet >= 1000.0 ) ? 999.999 : pT_bjet ;  // for pT > 1000.0, scale factors are used as for pT = 1000.0 
 
-                  bin        =  h2_btagefficiency_c->FindBin( pt , eta ) ;
-                  eff_factor =  h2_btagefficiency_c->GetBinContent( bin ); 
+                  bin        =  h2_btagefficiency_udsg->FindBin( pt , eta ) ;
+                  eff_factor =  h2_btagefficiency_udsg->GetBinContent( bin ); 
   
                   prob_mc    = prob_mc * eff_factor ;
 
@@ -6061,6 +6173,12 @@ void Event_Reweighting_Using_SF_N_MC_btageff(){
               }
 
         }
+
+        // cout     << "\n Scale_factor   = " << SF
+        //          << "\n eff_factor     = " << eff_factor
+        //          << "\n prob_mc        = " << prob_mc 
+        //          << "\n prob_data      = " << prob_data
+        //          << endl ;            
 
     }
 
@@ -6087,11 +6205,16 @@ void Event_Reweighting_Using_SF_N_MC_btageff(){
 
               not_tagged_prob_mc   = not_tagged_prob_mc * ( 1.0 - eff_factor ) ;
 
-              not_tagged_prob_data = not_tagged_prob_data * ( 1.0  - SF * eff_factor ) ;
+              not_tagged_prob_data = not_tagged_prob_data * ( 1.0  - (SF * eff_factor )) ;
   
 
         }
 
+        // cout     << "\n Scale_factor   = " << SF
+        //          << "\n eff_factor     = " << eff_factor
+        //          << "\n not_prob_mc        = " << not_tagged_prob_mc 
+        //          << "\n not_prob_data      = " << not_tagged_prob_data
+        //          << endl ;  
 
         // Reducible parts.... not need of 
         // else {
@@ -6135,17 +6258,17 @@ void Event_Reweighting_Using_SF_N_MC_btageff(){
 
     // jet_Flavor  =  BTagEntry::FLAV_UDSG ; 
 
-    cout     << "\n nottaggedprob_mc   = " << not_tagged_prob_mc 
-             << "\n nottaggedprob_data = " << not_tagged_prob_data
-             << endl ;   
+    // cout     << "\n nottaggedprob_mc   = " << not_tagged_prob_mc 
+    //          << "\n nottaggedprob_data = " << not_tagged_prob_data
+    //          << endl ;   
 
-    cout     << "\n prob_mc   = " << prob_mc 
-             << "\n prob_data = " << prob_data
-             << endl ;             
+    // cout     << "\n prob_mc   = " << prob_mc 
+    //          << "\n prob_data = " << prob_data
+    //          << endl ;             
 
     btag_weight  = ( prob_data * not_tagged_prob_data ) / ( prob_mc * not_tagged_prob_mc ) ;
 
-    cout << " \n Final weight = " << btag_weight << endl ;
+    // cout << " \n Final weight = " << btag_weight << endl ;
 
 
 

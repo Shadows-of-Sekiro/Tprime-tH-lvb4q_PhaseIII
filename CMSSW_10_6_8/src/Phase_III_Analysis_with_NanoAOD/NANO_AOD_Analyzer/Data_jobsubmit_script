@@ -3,18 +3,15 @@
 # rm list_of_Bkgfiles/*.root
 rm data_output_log/condor_*
 
-
-
-cd /eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Data_UL17/Muon_Single/
+cd /eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Data_UL17/Muon_Single
 
 rm Muon_Era*_Data_UL17_v2_*root
 
-cd /eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Data_UL17/Electron_Single/
+cd /eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Data_UL17/Electron_Single
 
 rm Electron_Era*_Data_UL17_v2_*root
 
-cd /afs/cern.ch/work/a/achhetri/NANO_AOD/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/NANO_AOD_Analyzer
-
+cd /afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/NANO_AOD_Analyzer
 
 cd ../../../../
 
