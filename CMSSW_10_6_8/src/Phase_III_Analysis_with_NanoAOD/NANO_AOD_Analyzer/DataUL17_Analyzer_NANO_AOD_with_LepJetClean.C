@@ -201,8 +201,8 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
    if ( IsData.Contains("PileUp"))  OutputFileName  = OutputFileName + "_"+ IsData +"_11-Aug-21.root";
    if ( IsData.Contains("NoPU"))  OutputFileName  = OutputFileName + "_EvntLvlv2_11-Aug-21.root";
 
-   if ( IsData.Contains("Data"))  OutputFileName  = OutputFileName + "EvntLvl_02-Sep-21.root";
-   if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "bweight_EvntW_02-Sep-21.root";
+   if ( IsData.Contains("Data"))  OutputFileName  = OutputFileName + "EvntLvl_11-Sep-21.root";
+   if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "bweight_EvntW_11-Sep-21.root";
    // if ( IsData.Contains("MCSampleEvntW"))  OutputFileName  = OutputFileName + "_"+ "_EvntW_17-Aug-21.root";
 
 
@@ -233,7 +233,7 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
    Define_Kinematic_Histo_for_HiggsJet() ;
    Define_Histograms_For_LeptonJet_Cleaning_Effect() ;
 
-   Define_2DHistogram_For_BtagEff() ;
+   // Define_2DHistogram_For_BtagEff() ;
 
 
    // Define_Tag_Jet_Histo() ;    // for tagged jets plots at reco level
@@ -522,6 +522,8 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
       if ( n_cleanjet.size() == 0 ) continue ;
 
+
+
       Cut_Efficiency_Flow -> Fill ( 7.5, factor);  // Clean jet tag
 
 
@@ -542,6 +544,11 @@ void UL17_Analyzer_NANO_AOD_with_LepJetClean::Loop(TString OutputFileName, TStri
 
 
       if( b_jet.size() == 0 ) continue ;
+
+      check   = b_jet[0];
+
+      if ( Jet_pt_clean[check] < 50.0 ) continue ;  // PASSING BJET WIH Pt CHECK ON LEADING
+
 
       // cout << "\n\n For Event,   " << jentry ;
 

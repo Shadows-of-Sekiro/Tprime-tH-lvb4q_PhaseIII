@@ -1,0 +1,16 @@
++JobFlavour = "microcentury"
+universe = vanilla
+Executable = Muon_Data_Condor_Job_UL_NANO_BkG.sh
+
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = Muon_Data_Condor_Job_UL_NANO_BkG.sh,PUPPI.exe, $(filename)
+Output = muon_data_output_log/condor_$(Cluster)_$(Process).stdout
+Error  = muon_data_output_log/condor_$(Cluster)_$(Process).stderr
+Log    = muon_data_output_log/condor_$(Cluster)_$(Process).log
+
+x509userproxy = $ENV(X509_USER_PROXY)
+Arguments = $(filename)
+
+Queue filename matching files ../../Large_Data_Files_Listing/Muon_Era*.txt

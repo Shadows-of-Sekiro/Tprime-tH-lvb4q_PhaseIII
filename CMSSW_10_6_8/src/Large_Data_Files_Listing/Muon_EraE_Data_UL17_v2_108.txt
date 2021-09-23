@@ -1,10 +1,7 @@
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1072.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1073.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1074.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1075.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1076.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1077.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1078.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1079.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1080.root
-/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0001/tree_1081.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0004/tree_4283.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0004/tree_4284.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0004/tree_4285.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0004/tree_4286.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0004/tree_4287.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0004/tree_4288.root
+/eos/user/a/achhetri/Data_UltraLegacy_NanoAOD/SingleMuon/EraE/210326_124630/0004/tree_4289.root

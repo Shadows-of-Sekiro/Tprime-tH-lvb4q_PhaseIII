@@ -129,7 +129,10 @@
       vector <int> fjet_copy;
       vector <int> fatjet_copy  ;
       vector <int> fatjet_sort  ;
-      
+
+      vector <int> forwjet_sort ;
+      vector <int> forwjet_copy ;
+
       vector <int> b_jetloose;
       vector <int> not_tagged_bjets ;
 
@@ -185,6 +188,9 @@
       TH1D* Cut_pTHiggs_Flow ;
       TH1D* Cut_SDMass_Flow ;
       TH1D* Cut_ST_Tau42_Flow ;
+
+      TH2F* Hist_Btag_vs_Forwjet ;    
+      TH2F* Hist_CleanJet_vs_Forwjet ;    
     
     //=======PileUp Reweighted Scale Factors==========================================
   
@@ -442,6 +448,9 @@
 
          fjet_copy.clear();
          fjet_sort.clear();    
+
+         forwjet_copy.clear();
+         forwjet_sort.clear();          
 
          fatjet_copy.clear()  ;
          fatjet_sort.clear()  ;
@@ -1661,8 +1670,16 @@ void Find_Object_type_From_Sample(TString sample) {
 
 
            h_dR_Higgs_wrt_Topb   = new TH1D("h_dR_Higgs_wrt_Topb", "deltaR Higgs wrt Topb Distribution", 100, 0.0, 5.0);
-           h_dR_Higgs_wrt_Topb ->GetYaxis()->SetTitle("Events") ;              
+           h_dR_Higgs_wrt_Topb ->GetYaxis()->SetTitle("Events") ;             
 
+
+           Hist_Btag_vs_Forwjet   = new TH2F("Hist_Btag_vs_Forwjet", "Btag vs Forwjet Distribution", 10, 0.0, 10.0, 10, 0.0, 10.0); 
+           Hist_Btag_vs_Forwjet   ->GetYaxis()->SetTitle("N(bjet)") ;             
+           Hist_Btag_vs_Forwjet   ->GetXaxis()->SetTitle("N(forwjet)") ;             
+
+           Hist_CleanJet_vs_Forwjet   = new TH2F("Hist_CleanJet_vs_Forwjet", "CleanJet vs Forwjet Distribution", 10, 0.0, 10.0, 10, 0.0, 10.0); 
+           Hist_CleanJet_vs_Forwjet   ->GetYaxis()->SetTitle("N(jet)") ;             
+           Hist_CleanJet_vs_Forwjet   ->GetXaxis()->SetTitle("N(forwjet)") ;    
     } 
 
    ///////////////////======================= Function Defining Kinematic Histogram ===================================================///////////////////                                             
@@ -1683,7 +1700,10 @@ void Find_Object_type_From_Sample(TString sample) {
             pT_name   =  Histogram_Pt_List[index] ;            
             pT_title  =  Histogram_Pt_List[index]  + " Distribution" ;   
            
-            Hist_object_pt.at(index) = new TH1D(pT_name,pT_title,140, 0, 1400.0);
+            if ( pT_name.Contains("ForwJet") ) Hist_object_pt.at(index) = new TH1D(pT_name,pT_title,80, 0, 400.0);
+            
+            else Hist_object_pt.at(index) = new TH1D(pT_name,pT_title,140, 0, 1400.0);
+
             Hist_object_pt.at(index) ->GetYaxis()->SetTitle("Events");
 
             ////////HISTROGRAM FOR ETA OF MAJOR OBJECTS //////////////////////////////
@@ -2104,7 +2124,9 @@ void Fill_Object_Population(){
 
       h_object_no.at(7) ->Fill(b_jet.size(), factor );           //  index 7   for nbJet  Filling Population Plot
 
+      Hist_CleanJet_vs_Forwjet ->Fill(n_forwjet.size(), n_cleanjet.size(),factor);
 
+      Hist_Btag_vs_Forwjet ->Fill(n_forwjet.size(), b_jet.size(),factor);
 }
 
 
@@ -2823,24 +2845,25 @@ void  Check_CLeanedJet_For_Event_N_Fill( TString Filling )
         if ( Jet_pt_clean[ji] < 30.0 )    continue ;
         if ( Jet_jetId[ji] < 2 )          continue ;  // for 2016, < 1, 2017/18 < 2
         
-        if ( fabs(Jet_eta_clean[ji]) > 2.4 )  n_forwjet.push_back(ji) ;
+        if ( fabs(Jet_eta_clean[ji]) > 2.4 ) {
+
+        if ( Jet_pt_clean[ji] > 35.0 )   n_forwjet.push_back(ji) ;
+
+        }
         else n_jet.push_back(ji);
         // else Check_Jet_Matched_Lepton_Index_N_Pass( ji ) ;
 
       }  
 
 
-      int Qsize   = ( n_forwjet.size() >= 2 ) ?  2 : n_forwjet.size() ;
-      
-      if ( Filling == "Yes") {        
-         
-         for (int kij = 0; kij < Qsize; ++kij )
-             {
-                  jets = n_forwjet[kij] ;
-                  Fill_Jet_Hist_Preselction_LvL( Filling + "ForwJet",  jets , kij) ;                  
-             }               
-      } // end of filling   
+      // Initialise sorting vector and do it in main function... FUCKER !!!!
+      if ( n_forwjet.size() == 1 ) forwjet_sort = n_forwjet ;    
 
+      if ( n_forwjet.size() > 1 ){
+          
+            forwjet_sort = n_forwjet ; 
+            forwjet_copy = n_forwjet ;     
+      }  
 
       // Initialise sorting vector and do it in main function... FUCKER !!!!
       if ( n_jet.size() == 1 ) jet_sort = n_jet ;    
@@ -2935,7 +2958,7 @@ void Check_Cleaned_Bjet_After_Muon_Isolation( TString WorkingPoint)  {
           jets = n_cleanjet[i]  ;
           // jets = n_jet[i]  ;
 
-          if ( Jet_pt_clean[jets] < 50.0 ) continue ;
+          // if ( Jet_pt_clean[jets] < 50.0 ) continue ;
           if ( Bjet_Selection_After_drCheck( jets, WorkingPoint) == 0 ) continue;
 
 
@@ -3488,6 +3511,60 @@ void Jet_sorting_pT_based_After_Cleaning(TString Filling) {
                // jmax = n_AK8Jet[i];
                jt   = jet_sort[i] ;
                Fill_Jet_Hist_Preselction_LvL( "LeptonCleanJetYes",  jt , i) ;   
+          }
+      } // END of FIlling Loop !!!!!
+
+}  // END of FUNCTION !!!!  
+
+
+//-=-=-=-==-=-==-=-==-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=---------================------============--------=
+
+void ForwJet_sorting_pT_based_After_Cleaning(TString Filling) {
+
+      int jmax = -1 ;
+      int jt   = -1 ; 
+
+      float max_pT = 0.0;
+
+      if ( Filling.Contains("Sorting")){
+      
+            // In case You want Sorting        
+            for( int i = 0 ; i < forwjet_sort.size(); i++){
+
+              if( forwjet_copy.size() == 0) continue ;
+
+              jmax   = 0;
+              max_pT = Jet_pt_clean[forwjet_copy[0]];  
+
+              for (int k = 0; k < forwjet_copy.size(); k++)
+              {
+                jt   = forwjet_copy[k];
+
+                if( Jet_pt_clean[jt] > max_pT ) {
+                  jmax   = k ;
+                  max_pT = Jet_pt_clean[jt];
+
+                }  
+              }
+             
+              forwjet_sort[i] =  forwjet_copy[jmax];
+              forwjet_copy.erase(forwjet_copy.begin() + jmax);
+
+            }
+      }
+      
+      // // Filling at preselection Level if Filling is Yes.
+
+      if ( Filling.Contains("Yes")){
+
+          jmax  = ( forwjet_sort.size() >= 2) ? 2 :  forwjet_sort.size() ;  
+
+          for (int i = 0; i < jmax; ++i)
+          {
+               // jmax = n_AK8Jet[i];
+               jt   = forwjet_sort[i] ;
+               Fill_Jet_Hist_Preselction_LvL( Filling + "ForwJet",  jt , i) ;                  
+
           }
       } // END of FIlling Loop !!!!!
 

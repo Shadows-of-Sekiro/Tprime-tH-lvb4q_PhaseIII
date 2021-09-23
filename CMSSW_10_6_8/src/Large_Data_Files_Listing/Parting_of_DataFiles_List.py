@@ -61,7 +61,7 @@ for samples in listOfSamples :
      rootFileList = []
      for line in lines : 
          count+=1
-         check = count % 10
+         check = count % 40
          rootFileList.append(line)
          if (check == 0) :
             textfileNumber += 1
