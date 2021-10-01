@@ -1,0 +1,4 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/ST_s-channel_4f_leptonDecays/210414_094934/0000/tree_17.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/ST_s-channel_4f_leptonDecays/210414_094934/0000/tree_18.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/ST_s-channel_4f_leptonDecays/210414_094934/0000/tree_19.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/ST_s-channel_4f_leptonDecays/210414_094934/0000/tree_2.root

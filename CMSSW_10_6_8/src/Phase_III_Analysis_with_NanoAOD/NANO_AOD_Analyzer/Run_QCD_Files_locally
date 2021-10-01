@@ -1,0 +1,6 @@
+./PUPPI.exe ../List_of_NANO_AOD_paths/QCD_Pt-80_EMEnr_UL17_v2.txt
+./PUPPI.exe ../List_of_NANO_AOD_paths/QCD_Pt-120_EMEnr_UL17_v2.txt
+./PUPPI.exe ../List_of_NANO_AOD_paths/QCD_Pt-170_EMEnr_UL17_v2.txt
+./PUPPI.exe ../List_of_NANO_AOD_paths/QCD_Pt-80_MuEnr_UL17_v2.txt
+./PUPPI.exe ../List_of_NANO_AOD_paths/QCD_Pt-120_MuEnr_UL17_v2.txt
+./PUPPI.exe ../List_of_NANO_AOD_paths/QCD_Pt-50_EMEnr_UL17_v2.txt

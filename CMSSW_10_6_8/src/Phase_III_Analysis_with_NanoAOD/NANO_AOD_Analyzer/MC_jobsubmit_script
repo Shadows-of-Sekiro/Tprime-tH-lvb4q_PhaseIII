@@ -1,5 +1,5 @@
 #!/bin/tcsh
-
+# 
 # rm list_of_Bkgfiles/*.root
 rm output_log/condor_*
 
@@ -49,17 +49,19 @@ rm output_log/condor_*
 
 cd /eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/
 
-rm -r UL17_TTbar_Files
-rm -r UL17_QCD_MuEnr_Files
-rm -r UL17_Wjets_To_LNu_Files
-rm -r UL17_DYjetsTo_LL_Files
-rm -r UL17_SingleTop_Files
+# rm -r UL17_TTbar_Files
+# rm -r UL17_QCD_MuEnr_Files
+# rm -r UL17_Wjets_To_LNu_Files
+# rm -r UL17_SingleTop_Files
 
-mkdir UL17_TTbar_Files/ 
-mkdir UL17_QCD_MuEnr_Files/
-mkdir UL17_Wjets_To_LNu_Files/
+rm -r UL17_DYjetsTo_LL_Files
+
+# mkdir UL17_TTbar_Files/ 
+# mkdir UL17_QCD_MuEnr_Files/
+# mkdir UL17_Wjets_To_LNu_Files/
+# mkdir UL17_SingleTop_Files/
+
 mkdir UL17_DYjetsTo_LL_Files/
-mkdir UL17_SingleTop_Files/
 
 cd /afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/NANO_AOD_Analyzer
 
@@ -68,7 +70,7 @@ cd ../../../../
 
 rm CMSSW_10_68.tgz
 
-tar  --exclude=tmp --exclude=.git --exclude=DAS_Root --exclude=PhysicsTools --exclude=WTopScalefactorProducer --exclude=MuonReferenceEfficiencies-master-EfficienciesStudies-UL2016_postVFP-DEN_TrackerMuons-rootfiles --exclude=MuonReferenceEfficiencies-master-EfficienciesStudies-UL2018-DEN_TrackerMuons-rootfiles --exclude=NANOAOD --exclude=List_of_NANO_AOD_paths --exclude=Data_Files_Path_NaNoAOD --exclude=Large_Data_Files_Listing --exclude=muon_data_output_log --exclude=electron_data_output_log -zcvf CMSSW_10_68.tgz CMSSW_10_6_8
+tar  --exclude=tmp --exclude=.git --exclude=DAS_Root --exclude=UL17_Bkg --exclude=UL_TTbar --exclude=PhysicsTools --exclude=WTopScalefactorProducer --exclude=MuonReferenceEfficiencies-master-EfficienciesStudies-UL2016_postVFP-DEN_TrackerMuons-rootfiles --exclude=MuonReferenceEfficiencies-master-EfficienciesStudies-UL2018-DEN_TrackerMuons-rootfiles --exclude=NANOAOD --exclude=List_of_NANO_AOD_paths --exclude=Data_Files_Path_NaNoAOD --exclude=Large_Data_Files_Listing --exclude=muon_data_output_log --exclude=electron_data_output_log -zcvf CMSSW_10_68.tgz CMSSW_10_6_8
 
 
 xrdcp -f CMSSW_10_68.tgz root://eosuser.cern.ch//eos/user/a/achhetri/.

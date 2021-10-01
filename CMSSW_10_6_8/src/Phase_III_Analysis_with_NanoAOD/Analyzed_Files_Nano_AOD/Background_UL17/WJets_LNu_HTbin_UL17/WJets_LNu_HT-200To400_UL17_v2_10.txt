@@ -1,0 +1,3 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-200To400_v2/210428_221543/0000/tree_34.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-200To400_v2/210428_221543/0000/tree_4.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/WJetsToLNu_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-200To400_v2/210428_221543/0000/tree_5.root

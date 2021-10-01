@@ -191,7 +191,11 @@
 
       TH2F* Hist_Btag_vs_Forwjet ;    
       TH2F* Hist_CleanJet_vs_Forwjet ;    
-    
+
+      TH2F* Hist2D_DeltaR_Hwrtbjet1_vs_FwdJet ;
+      TH2F* Hist2D_DeltaR_Hwrtbjet2_vs_FwdJet ;
+      TH2F* Hist2D_DeepMDHiggs_vs_FwdJet ;
+   
     //=======PileUp Reweighted Scale Factors==========================================
   
       TFile  *PileUp_file ;   
@@ -1849,7 +1853,7 @@ void Find_Object_type_From_Sample(TString sample) {
             if ( index == 16 ) Hist_for_Leading_HiggsJet.at(index) = new TH1D(pT_name,pT_title, 8, 0, 8);
             if ( index == 22 ) Hist_for_Leading_HiggsJet.at(index) = new TH1D(pT_name,pT_title, 8, 0, 8);
             
-            if ( index >  16 && index < 21 ) Hist_for_Leading_HiggsJet.at(index) = new TH1D(pT_name,pT_title, 500, 0, 5.0);              
+            if ( index >  16 && index < 21 ) Hist_for_Leading_HiggsJet.at(index) = new TH1D(pT_name,pT_title, 50, 0, 5.0);              
 
 
             Hist_for_Leading_HiggsJet.at(index) ->GetYaxis()->SetTitle("Events");  
@@ -1857,6 +1861,18 @@ void Find_Object_type_From_Sample(TString sample) {
    
       } // END OF THE LOOP!!!!
 
+      Hist2D_DeltaR_Hwrtbjet1_vs_FwdJet =  new TH2F("Hist2D_DeltaR_higgs_bjet1_vs_FwdJet", "DeltaR(H,bjet1) vs Forwjet Distribution", 10, 0.0, 10.0, 50, 0.0, 5.0); 
+      Hist2D_DeltaR_Hwrtbjet1_vs_FwdJet   ->GetYaxis()->SetTitle("DeltaR(H,bjet)") ;             
+      Hist2D_DeltaR_Hwrtbjet1_vs_FwdJet   ->GetXaxis()->SetTitle("N(forwjet)") ;    
+
+
+      Hist2D_DeltaR_Hwrtbjet2_vs_FwdJet =  new TH2F("Hist2D_DeltaR_higgs_bjet2_vs_FwdJet", "DeltaR(H,bjet2) vs Forwjet Distribution", 10, 0.0, 10.0, 50, 0.0, 5.0); 
+      Hist2D_DeltaR_Hwrtbjet2_vs_FwdJet   ->GetYaxis()->SetTitle("DeltaR(H,bjet)") ;             
+      Hist2D_DeltaR_Hwrtbjet2_vs_FwdJet   ->GetXaxis()->SetTitle("N(forwjet)") ;  
+
+      Hist2D_DeepMDHiggs_vs_FwdJet =  new TH2F("Hist2D_DeepMDHiggs_vs_FwdJet", "DeepMD_Higgs vs Forwjet Distribution", 10, 0.0, 10.0, 10, 0.0, 1.0); 
+      Hist2D_DeepMDHiggs_vs_FwdJet   ->GetYaxis()->SetTitle("DeepMD_HvsQCD(Higgs)") ;             
+      Hist2D_DeepMDHiggs_vs_FwdJet   ->GetXaxis()->SetTitle("N(forwjet)") ;       
    }   // END OF THE FUNCTION !!!!!!!!   
 
    //////////////////=================Function Defining DeltaR and Delta Pt Histograms==============================///////////////////////////////////
@@ -1888,7 +1904,7 @@ void Find_Object_type_From_Sample(TString sample) {
           dR_name    =  Histogram_DeltaR_FatJet_List[i] ;
           dR_title   =  Histogram_DeltaR_FatJet_List[i] + "Distribution" ;
                 
-          DeltaR_Hist_FatJet_wrt_jet.at(i) = new TH1D(dR_name,dR_title, 500, 0, 5.0);
+          DeltaR_Hist_FatJet_wrt_jet.at(i) = new TH1D(dR_name,dR_title, 50, 0, 5.0);
           DeltaR_Hist_FatJet_wrt_jet.at(i) ->GetYaxis()->SetTitle("Events");
                
         } // End of LOOP !!!!      
@@ -1912,7 +1928,7 @@ void Find_Object_type_From_Sample(TString sample) {
           dR_name    =  Histogram_DeltaR_Muon_List[i] ;
           dR_title   =  Histogram_DeltaR_Muon_List[i] + "Distribution" ;
                 
-          DeltaR_Hist_Muon_wrt_jet.at(i) = new TH1D(dR_name,dR_title, 500, 0, 5.0);
+          DeltaR_Hist_Muon_wrt_jet.at(i) = new TH1D(dR_name,dR_title, 50, 0, 5.0);
           DeltaR_Hist_Muon_wrt_jet.at(i) ->GetYaxis()->SetTitle("Events");
                
         } // End of LOOP !!!!      
@@ -2126,7 +2142,9 @@ void Fill_Object_Population(){
 
       Hist_CleanJet_vs_Forwjet ->Fill(n_forwjet.size(), n_cleanjet.size(),factor);
 
-      Hist_Btag_vs_Forwjet ->Fill(n_forwjet.size(), b_jet.size(),factor);
+      // Hist_Btag_vs_Forwjet ->Fill(n_forwjet.size(), b_jet.size(),factor);
+
+      Hist_Btag_vs_Forwjet ->Fill(n_forwjet.size(), n_AK8Jet.size(),factor);    // Using for AK8jet
 }
 
 
@@ -2415,6 +2433,8 @@ void   Fill_HiggsJet_Hist_Preselction_LvL( TString fatjet , TString LeptonType )
     Hist_for_Leading_HiggsJet.at(15)   ->Fill(FatJet_eta_clean[fatjet_index], factor ) ;
     Hist_for_Leading_HiggsJet.at(21)   ->Fill(msoftdrop_corr, factor ) ;
   
+    Hist2D_DeepMDHiggs_vs_FwdJet  ->Fill( n_forwjet.size(), FatJet_deepTagMD_H4qvsQCD[fatjet_index], factor ) ;
+
     if (fatjet.Contains("Pre"))   Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( fatjet_index , fatjet, LeptonType);     
 
     if (fatjet.Contains("Event")) DeltaR_Higgs_wrt_TopProd_atEvntSel( fatjet_index , LeptonType);         
@@ -2471,6 +2491,7 @@ void  Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( int Higgs_index , TString TopbjetC
       
       // Delta r wrt to clean jets
 
+      jet_copy = b_jet ;
       int Ssize   = ( jet_copy.size() >= 2 ) ?  2 : jet_copy.size() ;
 
       if ( TopbjetCheck.Contains("Topbjet")){
@@ -2490,6 +2511,9 @@ void  Fill_DeltaR_Hist_of_Higgs_wrt_Top_Prod( int Higgs_index , TString TopbjetC
         dR_Calculator(Higgs_eta, Higgs_phi, top_prod_eta, top_prod_phi) ;
     
         Hist_for_Leading_HiggsJet.at(hist_index)  ->Fill(dR, factor ) ;
+
+        if(kji == 0) Hist2D_DeltaR_Hwrtbjet1_vs_FwdJet ->Fill( n_forwjet.size(), dR, factor) ;
+        if(kji == 1) Hist2D_DeltaR_Hwrtbjet2_vs_FwdJet ->Fill( n_forwjet.size(), dR, factor) ;
 
       } // Clean Jet Loop Ended !!!!!!!
 
@@ -2952,11 +2976,11 @@ void Check_Cleaned_Bjet_After_Muon_Isolation( TString WorkingPoint)  {
       int jets      = -1 ; 
       bool bjet_pass = true ; 
 
-      for (int i = 0; i < n_cleanjet.size(); ++i)
-      // for (int i = 0; i < n_jet.size(); ++i)
+      // for (int i = 0; i < n_cleanjet.size(); ++i)
+      for (int i = 0; i < n_jet.size(); ++i)
       {
-          jets = n_cleanjet[i]  ;
-          // jets = n_jet[i]  ;
+          // jets = n_cleanjet[i]  ;
+          jets = n_jet[i]  ;
 
           // if ( Jet_pt_clean[jets] < 50.0 ) continue ;
           if ( Bjet_Selection_After_drCheck( jets, WorkingPoint) == 0 ) continue;
@@ -4821,12 +4845,31 @@ void HiggsTagging_Using_PT_SD_Tau_N_Deep( TString Higgs_PT_SD_Tau_Deep_Check) {
            Cut_Tau42_Flow->Fill(1.5, factor); // fOR NO CUT BIN .... OKAY JUST REMEBER
            Cut_DeepMD_H_Flow->Fill(1.5, factor); // fOR NO CUT BIN .... OKAY JUST REMEBER
 
-           if ( Tau42_N_DeepMD_H_Selection( Higgs_PT_SD_Tau_Deep_Check, jet_idx)  == -1 ) continue ;
            
-           // if ( FatJet_mass_clean[jet_idx] < 90.0 && FatJet_mass_clean[jet_idx] > 160.0 ) continue ;
-           anyonecutpassed  = jet_idx;
+           // For Control Region Study
+           if ( Higgs_PT_SD_Tau_Deep_Check.Contains("Yes")) {
 
-           Higgsjets.push_back(jet_idx);
+                Higgsjets.push_back(jet_idx);
+                anyonecutpassed  = jet_idx;
+
+                // cout << "\n Pt           =   " << FatJet_pt_clean[jet_idx]
+                     // << "\n SoftDropMass =   " << msoftdrop_corr  << endl ;
+                
+
+           }     
+
+           else {
+
+                if ( Tau42_N_DeepMD_H_Selection( Higgs_PT_SD_Tau_Deep_Check, jet_idx)  != -1 ) {
+
+                      Higgsjets.push_back(jet_idx);
+                      anyonecutpassed  = jet_idx;                      
+                      // cout <<"\n gygugj";
+
+                }
+                      
+           }
+           
 
       }
 

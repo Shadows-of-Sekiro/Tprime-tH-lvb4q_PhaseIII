@@ -175,6 +175,13 @@ public :
    Bool_t          Electron_mvaFall17V2noIso_WP90[8];   //[nElectron]
    Bool_t          Electron_mvaFall17V2noIso_WPL[8];   //[nElectron]
    UChar_t         Electron_seedGain[8];   //[nElectron]
+
+   // and in nanoAOD as:
+
+      // 'btag_DDBvL'
+      // 'btag_DDCvL'
+      // 'btag_DDCvB' 
+
    UInt_t          nFatJet;
    Float_t         FatJet_area[7];   //[nFatJet]
    Float_t         FatJet_btagCMVA[7];   //[nFatJet]
@@ -1986,7 +1993,10 @@ public :
    virtual Int_t    GetEntry(Long64_t entry);
    virtual Long64_t LoadTree(Long64_t entry);
    virtual void     Init(TTree *tree , TString inputFile );
-   virtual void     Loop(TString OutputFileName, TString Channel, TString LeptonIsolation , TString Higgs_WP, TString IsData);
+
+   // virtual void     Loop(TString OutputFileName, TString Channel, TString LeptonIsolation , TString Higgs_WP, TString IsData);
+   virtual void     Control_Region_Study(TString OutputFileName, TString Channel, TString LeptonIsolation , TString Higgs_WP, TString IsData);
+   
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
 

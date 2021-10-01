@@ -1,0 +1,5 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1800_LH_v2/210316_060102/0000/tree_32.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1800_LH_v2/210316_060102/0000/tree_20.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1800_LH_v2/210316_060102/0000/tree_21.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1800_LH_v2/210316_060102/0000/tree_37.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1800_LH_v2/210316_060102/0000/tree_10.root

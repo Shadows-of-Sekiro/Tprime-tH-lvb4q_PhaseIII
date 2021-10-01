@@ -26,17 +26,36 @@ echo "====> List output files : "
 
 #ls TEST/*.root 
 
-#xrdcp -f *.root  root://eosuser.cern.ch//eos/user/a/achhetri/TTbar_UL16_test.root
 
-xrdcp -f ../Analyzed_Files_Nano_AOD/UL_TTbar/root_text_files_list/TT*.root  root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_TTbar_Files/
-xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/QCD*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_QCD_MuEnr_Files/
+# xrdcp -f ../Analyzed_Files_Nano_AOD/UL_TTbar/root_text_files_list/TT*.root  root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_TTbar_Files/
+
+
+# xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/QCD*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_QCD_MuEnr_Files/
+
 # xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/WJets_LNu*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_Wjets_To_LNu_Files/
+
 # xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/DYJetsToLL_*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_DYjetsTo_LL_Files/
 
-xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/WJets_LNu_HT*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_Wjets_To_LNu_Files/
-xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/DYJetsToLL_M-50_HT*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_DYjetsTo_LL_Files/
+# xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/WJets_LNu_HT*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_Wjets_To_LNu_Files/
 
-xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/ST_*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_SingleTop_Files/
+# xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/DYJetsToLL_M-50_HT*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_DYjetsTo_LL_Files/
+
+# xrdcp -f ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/ST_*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_SingleTop_Files/
+
+
+
+####=-=-=-=-=-=-=-=-==-=-=---###=-=-=-=-=-=-=-=-==-=-=---###=-=-=-=-=-=-=-=-==-=-=---###=-=-=-=-=-=-=-=-==-=-=---###=-=-=-=-=-=-=-=-==-=-=---###=-=-=-=-=-=-=-=-==-=-=---###=-=-=-=-=-=-=-=-==-=-=---###
+
+xrdcp -f ../Analyzed_Files_Nano_AOD/Background_UL17/DYJets_LL_HTbin_UL17/DYJetsToLL_M-50_HT*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_DYjetsTo_LL_Files/
+
+# xrdcp -f ../Analyzed_Files_Nano_AOD/Background_UL17/SingleTop_Inclusive_UL17/ST_*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_SingleTop_Files/
+
+# xrdcp -f ../Analyzed_Files_Nano_AOD/Background_UL17/TTbar_Inclusive_UL17/TT*.root  root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_TTbar_Files/
+
+# xrdcp -f ../Analyzed_Files_Nano_AOD/Background_UL17/WJets_LNu_HTbin_UL17/WJets_LNu_HT*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_Wjets_To_LNu_Files/
+
+# xrdcp -f ../Analyzed_Files_Nano_AOD/Background_UL17/QCD_UL17/QCD*.root        root://eosuser.cern.ch//eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Background_Samples_UL17/UL17_QCD_MuEnr_Files/
+
 
 cd ${_CONDOR_SCRATCH_DIR}
 rm -rf CMSSW_10_6_8
@@ -50,6 +69,20 @@ date
 # Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/DYJets*UL17_*.txt
 # Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/WJets_LNu_HT*UL17_*.txt
 # Queue filename matching files ../Analyzed_Files_Nano_AOD/UL17_Bkg/root_file_list/DYJetsToLL_M-50_HT*UL17_*.txt
+
+
+#2nd set of jobs
+
+# Queue filename matching files ../Analyzed_Files_Nano_AOD/Background_UL17/WJets_LNu_HTbin_UL17/WJets_LNu_HT*UL17_*.txt
+
+# Queue filename matching files ../Analyzed_Files_Nano_AOD/Background_UL17/DYJets_LL_HTbin_UL17/DYJetsToLL_M-50_HT*UL17_*.txt
+
+# Queue filename matching files ../Analyzed_Files_Nano_AOD/Background_UL17/SingleTop_Inclusive_UL17/ST_*UL17*.txt
+
+# Queue filename matching files ../Analyzed_Files_Nano_AOD/Background_UL17/TTbar_Inclusive_UL17/TT_to*.txt
+
+# Queue filename matching files ../Analyzed_Files_Nano_AOD/Background_UL17/QCD_UL17/QCD_*UL17_*.txt
+
 
 
 

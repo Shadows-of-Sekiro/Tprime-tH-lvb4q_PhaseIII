@@ -1,0 +1,5 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1000_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1000_LH_v2/210316_060258/0000/tree_32.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1000_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1000_LH_v2/210316_060258/0000/tree_15.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1000_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1000_LH_v2/210316_060258/0000/tree_17.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1000_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1000_LH_v2/210316_060258/0000/tree_7.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/TprimeBToTH_M-1000_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeB_to_TH_M1000_LH_v2/210316_060258/0000/tree_14.root

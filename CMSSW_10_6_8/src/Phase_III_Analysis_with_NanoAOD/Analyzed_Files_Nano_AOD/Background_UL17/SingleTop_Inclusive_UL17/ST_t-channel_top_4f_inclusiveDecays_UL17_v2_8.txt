@@ -1,0 +1,4 @@
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/ST_t-channel_top_4f_inclusiveDecays/210414_094734/0000/tree_35.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/ST_t-channel_top_4f_inclusiveDecays/210414_094734/0000/tree_36.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/ST_t-channel_top_4f_inclusiveDecays/210414_094734/0000/tree_37.root
+/eos/user/a/achhetri/Tprime_v5_NANo_AOD_106X/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/ST_t-channel_top_4f_inclusiveDecays/210414_094734/0000/tree_38.root

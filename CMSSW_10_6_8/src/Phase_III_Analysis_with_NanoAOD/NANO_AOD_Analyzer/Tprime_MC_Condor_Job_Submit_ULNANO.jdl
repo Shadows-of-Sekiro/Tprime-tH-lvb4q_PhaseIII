@@ -1,0 +1,18 @@
++JobFlavour = "microcentury"
+universe = vanilla
+Executable = Tprime_MC_Condor_Job_ULNANO.sh
+
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = Tprime_MC_Condor_Job_ULNANO.sh,PUPPI.exe, $(filename)
+Output = tprime_output_log/condor_$(Cluster)_$(Process).stdout
+Error = tprime_output_log/condor_$(Cluster)_$(Process).stderr
+Log = tprime_output_log/condor_$(Cluster)_$(Process).log
+
+x509userproxy = $ENV(X509_USER_PROXY)
+Arguments = $(filename)
+
+Queue filename matching files ../Analyzed_Files_Nano_AOD/Tprime_UL17/Signal_Root_Files_List_UL17/Tprime_M1500_UL17_v2_*.txt
+
+

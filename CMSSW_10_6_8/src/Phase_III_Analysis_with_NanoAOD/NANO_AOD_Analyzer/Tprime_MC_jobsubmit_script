@@ -1,0 +1,44 @@
+#!/bin/tcsh
+
+# rm list_of_Bkgfiles/*.root
+rm tprime_output_log/condor_*
+
+
+cd /eos/user/a/achhetri/Tprime_PhaseIII/Analyzed_NANO_file_via_Condor/Signal_UL17/
+
+ls -ltrh 
+
+rm Tprime_*UL17_v2_*.root
+
+cd /afs/cern.ch/work/a/achhetri/Tprime-tH-lvb4q_PhaseIII/
+
+
+rm CMSSW_10_68_tprime.tgz
+
+tar  --exclude=tmp --exclude=.git --exclude=DAS_Root --exclude=PhysicsTools --exclude=WTopScalefactorProducer --exclude=MuonReferenceEfficiencies-master-EfficienciesStudies-UL2016_postVFP-DEN_TrackerMuons-rootfiles --exclude=MuonReferenceEfficiencies-master-EfficienciesStudies-UL2018-DEN_TrackerMuons-rootfiles --exclude=NANOAOD --exclude=List_of_NANO_AOD_paths --exclude=Data_Files_Path_NaNoAOD --exclude=Large_Data_Files_Listing --exclude=muon_data_output_log --exclude=electron_data_output_log --exclude=output_log  --exclude=Background_UL17  --exclude=UL_TTbar --exclude=UL17_Bkg  -zcvf CMSSW_10_68_tprime.tgz CMSSW_10_6_8
+
+
+xrdcp -f CMSSW_10_68_tprime.tgz root://eosuser.cern.ch//eos/user/a/achhetri/.
+
+
+ls -ltrh
+
+cd CMSSW_10_6_8/src/Phase_III_Analysis_with_NanoAOD/NANO_AOD_Analyzer
+
+ls -ltrh 
+
+# condor_submit Tb_tH_LH_M1000_merged_test.jdl
+# # condor_submit test.jdl
+# # 
+# condor_q
+
+# eosls -ltrh /eos/uscms/store/user/achhetri/PhaseII_MainTree/Background_v3_Samples/
+# ls -ltrh
+
+
+# list of jobs
+# Queue filename matching files list_of_Bkgfiles/Bkg_QCD_Pt*.txt
+# Queue filename matching files list_of_Bkgfiles/Bkg_WJets_*.txt
+# Queue filename matching files list_of_Bkgfiles/Bkg_TTbar_*.txt
+# Queue filename matching files list_of_Bkgfiles/Bkg_DYJetsToLL_*.txt
+# Queue filename matching files list_of_Bkgfiles/ST_*.txt
